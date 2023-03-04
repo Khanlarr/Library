@@ -1,18 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panel</title>
     <!-- Css -->
-    <link rel="stylesheet" href="./assets/css/panel.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./assets/css/panel.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <!-- SideBar -->
+    <div class="sidebar">
+      <div class="sidebar__header">
+        <div class="header__img">
+          <img src="./assets/img/Vector.png" alt="Vector.png" />
+        </div>
+        <div class="header__title">
+          <h2>LIBRARY</h2>
+          <p>Admin Panel</p>
+        </div>
+      </div>
+      <div class="sidebar__list">
+        <div class="list__img">
+          <img src="./assets/img/Vector.png" alt="Vector.png" />
+        </div>
+        <div class="list__title">
+          <h2><a href="#add_book">Home</a></h2>
+        </div>
+      </div>
+      <div class="sidebar__list">
+        <div class="list__img">
+          <img src="./assets/img/Vector.png" alt="Vector.png" />
+        </div>
+        <div class="list__title">
+          <h2><a href="#about_form">About</a></h2>
+        </div>
+      </div>
+      <div class="sidebar__list">
+        <div class="list__img">
+          <img src="./assets/img/Vector.png" alt="Vector.png" />
+        </div>
+        <div class="list__title">
+          <h2><a href="#join_us">Join Us</a></h2>
+        </div>
+      </div>
+      <div class="sidebar__list">
+        <div class="list__img">
+          <img src="./assets/img/Vector.png" alt="Vector.png" />
+        </div>
+        <div class="list__title">
+          <h2><a href="#contact_us">Contact</a></h2>
+        </div>
+      </div>
+      <div class="sidebar__list">
+        <div class="list__img">
+          <img src="./assets/img/Vector.png" alt="Vector.png" />
+        </div>
+        <div class="list__title">
+          <h2><a href="">Logout</a></h2>
+        </div>
+      </div>
+    </div>
     <!-- Main -->
-    
+    <div class="container">
+      <div class="main">
+        <div class="add_book" id="add_book">
+          <h2 class="add_book__title">Add book</h2>
+          <div class="search_book">
+            <h3 class="search_book__title">Search book</h3>
+            <form action="" class="search_book_form">
+              <input type="text" placeholder="Book Name" />
+              <button class="search_book_btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+            <div>
+              <!--  -->
+            </div>
+          </div>
+        </div>
+        <div class="book_form">
+          <h3 class="book_form__title">Book form</h3>
+          <div class="book_form_add">
+            <div class="book_name">
+              <label for="bk_name">Book Name</label>
+              <input type="text" id="bk_name" required/>
+            </div>
+            <div class="author_name">
+              <label for="ath_name">Author Name</label>
+              <input type="text" id="ath_name" required/>
+            </div>
+            <div class="book_image_url">
+              <label for="bk_url">Book Image Url</label>
+              <input type="text" id="bk_url" required/>
+            </div>
+            <div class="description">
+              <label for="dscrpt">Description</label>
+              <textarea
+                id="dscrpt"
+                cols="30"
+                rows="10"
+                required
+              ></textarea>
+            </div>
+            <div class="book_type">
+              <label for="bk_type">Book Type</label>
+              <input type="text" id="bk_type" required/>
+            </div>
+            <div class="book_submit">
+              <button type="submit">Add</button>
+            </div>
+          </div>
+        </div>
+        <div class="about_form" id="about_form">
+          <h3 class="about_form__title">About Store</h3>
+          <div class="about_form_add">
+            <div class="about_title">
+              <label for="ab_title">Title</label>
+              <input type="text" id="ab_title" />
+            </div>
+            <div class="about_image_url">
+              <label for="bk_url">Book Image Url</label>
+              <input type="text" id="bk_url" />
+            </div>
+            <div class="description">
+              <label for="dscrpt">Description</label>
+              <textarea
+                name="description"
+                id="dscrpt"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
+            <div class="about_submit">
+              <button>About info add</button>
+            </div>
+          </div>
+        </div>
+        <div class="join_us" id="join_us">
+          <h2 class="join_us_title">Join Us</h2>
+          <div class="join_us_table">
+            <table>
+              <tr>
+                <th>#</th>
+                <th>Full Name</th>
+                <th>Email Address</th>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="contact_us" id="contact_us">
+          <h2 class="contact_us_title">Contact Us</h2>
+          <div class="contact_us_table">
+            <table>
+              <tr>
+                <th>#</th>
+                <th>Full Name</th>
+                <th>Address</th>
+                <th>Email Address</th>
+                <th>Phone Number</th>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Js -->
-    <script src="./assets/js/panel.js"></script>
-</body>
+    <script src="./assets/js/panel.js" type="module" defer></script>
+  </body>
 </html>
