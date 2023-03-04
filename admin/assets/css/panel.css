@@ -387,14 +387,20 @@ html,body{
     .main {
         left: 0;
         padding: 4rem 1rem;
-        width: 92vw;
+        width: 95vw;
     }
 }
 @media screen and (max-width:576px){
   .main{
-    width: 75vw;
+    width: 88vw;
   }
   .search_book_form input {
     width: 50%;
+  }
+  .book_form_add,.about_form_add {
+    padding: 10px 20px 20px;
+  }
+  .join_us .join_us_table,.contact_us .contact_us_table{
+    overflow-x: scroll;
   }
 }
