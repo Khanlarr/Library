@@ -32,7 +32,7 @@
           <img src="./assets/img/Vector.png" alt="Vector.png" />
         </div>
         <div class="list__title">
-          <h2>Home</h2>
+          <h2><a href="#add_book">Home</a></h2>
         </div>
       </div>
       <div class="sidebar__list">
@@ -40,7 +40,7 @@
           <img src="./assets/img/Vector.png" alt="Vector.png" />
         </div>
         <div class="list__title">
-          <h2>About</h2>
+          <h2><a href="#about_form">About</a></h2>
         </div>
       </div>
       <div class="sidebar__list">
@@ -48,7 +48,7 @@
           <img src="./assets/img/Vector.png" alt="Vector.png" />
         </div>
         <div class="list__title">
-          <h2>Join Us</h2>
+          <h2><a href="#join_us">Join Us</a></h2>
         </div>
       </div>
       <div class="sidebar__list">
@@ -56,7 +56,7 @@
           <img src="./assets/img/Vector.png" alt="Vector.png" />
         </div>
         <div class="list__title">
-          <h2>Contact</h2>
+          <h2><a href="#contact_us">Contact</a></h2>
         </div>
       </div>
       <div class="sidebar__list">
@@ -64,14 +64,14 @@
           <img src="./assets/img/Vector.png" alt="Vector.png" />
         </div>
         <div class="list__title">
-          <h2>Logout</h2>
+          <h2><a href="">Logout</a></h2>
         </div>
       </div>
     </div>
     <!-- Main -->
     <div class="container">
       <div class="main">
-        <div class="add_book">
+        <div class="add_book" id="add_book">
           <h2 class="add_book__title">Add book</h2>
           <div class="search_book">
             <h3 class="search_book__title">Search book</h3>
@@ -88,90 +88,78 @@
         </div>
         <div class="book_form">
           <h3 class="book_form__title">Book form</h3>
-            <form action="" class="book_form_add">
-              <div class="book_name">
-                <label for="bk_name">Book Name</label>
-                <input type="text" id="bk_name" />
-              </div>
-              <div class="author_name">
-                <label for="ath_name">Author Name</label>
-                <input type="text" id="ath_name" />
-              </div>
-              <div class="book_image_url">
-                <label for="bk_url">Book Image Url</label>
-                <input type="text" id="bk_url" />
-              </div>
-              <div class="description">
-                <label for="dscrpt">Description</label>
-                <textarea
-                  name="description"
-                  id="dscrpt"
-                  cols="30"
-                  rows="10"
-                ></textarea>
-              </div>
-              <div class="book_type">
-                <label for="bk_type">Book Type</label>
-                <input type="text" id="bk_type" />
-              </div>
-              <div class="book_submit">
-                <button type="submit">Add</button>
-              </div>
-            </form>
-        </div>
-        <div class="about_form">
-            <h3 class="about_form__title">About Store</h3>
-              <form action="" class="about_form_add">
-                <div class="about_title">
-                  <label for="ab_title">Title</label>
-                  <input type="text" id="ab_title" />
-                </div>
-                <div class="about_image_url">
-                  <label for="bk_url">Book Image Url</label>
-                  <input type="text" id="bk_url" />
-                </div>
-                <div class="description">
-                  <label for="dscrpt">Description</label>
-                  <textarea
-                    name="description"
-                    id="dscrpt"
-                    cols="30"
-                    rows="10"
-                  ></textarea>
-                </div>
-                <div class="about_submit">
-                  <button type="submit">About info add</button>
-                </div>
-              </form>
+          <div class="book_form_add">
+            <div class="book_name">
+              <label for="bk_name">Book Name</label>
+              <input type="text" id="bk_name" required/>
+            </div>
+            <div class="author_name">
+              <label for="ath_name">Author Name</label>
+              <input type="text" id="ath_name" required/>
+            </div>
+            <div class="book_image_url">
+              <label for="bk_url">Book Image Url</label>
+              <input type="text" id="bk_url" required/>
+            </div>
+            <div class="description">
+              <label for="dscrpt">Description</label>
+              <textarea
+                id="dscrpt"
+                cols="30"
+                rows="10"
+                required
+              ></textarea>
+            </div>
+            <div class="book_type">
+              <label for="bk_type">Book Type</label>
+              <input type="text" id="bk_type" required/>
+            </div>
+            <div class="book_submit">
+              <button type="submit">Add</button>
+            </div>
           </div>
-          <div class="join_us">
-            <h2 class="join_us_title">Join  Us</h2>
-            <table class="join_us_table">
+        </div>
+        <div class="about_form" id="about_form">
+          <h3 class="about_form__title">About Store</h3>
+          <div class="about_form_add">
+            <div class="about_title">
+              <label for="ab_title">Title</label>
+              <input type="text" id="ab_title" />
+            </div>
+            <div class="about_image_url">
+              <label for="bk_url">Book Image Url</label>
+              <input type="text" id="bk_url" />
+            </div>
+            <div class="description">
+              <label for="dscrpt">Description</label>
+              <textarea
+                name="description"
+                id="dscrpt"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
+            <div class="about_submit">
+              <button>About info add</button>
+            </div>
+          </div>
+        </div>
+        <div class="join_us" id="join_us">
+          <h2 class="join_us_title">Join Us</h2>
+          <div class="join_us_table">
+            <table>
               <tr>
                 <th>#</th>
                 <th>Full Name</th>
                 <th>Email Address</th>
               </tr>
-              <tr>
-                <td>1</td>
-                <td>Audrey Mckinney</td>
-                <td>lisa.watson@example.com</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Audrey Mckinney</td>
-                <td>lisa.watson@example.com</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Audrey Mckinney</td>
-                <td>lisa.watson@example.com</td>
-              </tr>
             </table>
           </div>
-          <div class="contact_us">
-            <h2 class="contact_us_title">Contact Us</h2>
-            <table class="contact_us_table">
+        </div>
+        <div class="contact_us" id="contact_us">
+          <h2 class="contact_us_title">Contact Us</h2>
+          <div class="contact_us_table">
+            <table>
               <tr>
                 <th>#</th>
                 <th>Full Name</th>
@@ -179,32 +167,12 @@
                 <th>Email Address</th>
                 <th>Phone Number</th>
               </tr>
-              <tr>
-                <td>1</td>
-                <td>Audrey Mckinney</td>
-                <td>1473 Ranchview Dr undefined San Jose</td>
-                <td>lisa.watson@example.com</td>
-                <td>(209) 555-0104</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Audrey Mckinney</td>
-                <td>1473 Ranchview Dr undefined San Jose</td>
-                <td>lisa.watson@example.com</td>
-                <td>(209) 555-0104</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Audrey Mckinney</td>
-                <td>1473 Ranchview Dr undefined San Jose</td>
-                <td>lisa.watson@example.com</td>
-                <td>(209) 555-0104</td>
-              </tr>
             </table>
           </div>
+        </div>
       </div>
     </div>
     <!-- Js -->
-    <script src="./assets/js/panel.js"></script>
+    <script src="./assets/js/panel.js" type="module" defer></script>
   </body>
 </html>
