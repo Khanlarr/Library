@@ -144,10 +144,14 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-html{
+
+html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
-html,body{
+
+html,
+body {
     overflow-x: hidden;
 }
 
@@ -191,6 +195,10 @@ html,body{
     font-weight: 400;
     font-size: 18px;
 }
+.list__title a{
+    text-decoration: none;
+    color: var(--white-color);
+}
 
 .header__img img {
     width: 100%;
@@ -228,7 +236,6 @@ html,body{
     position: absolute;
     left: 30rem;
     padding: 5rem 2rem;
-    height:  400vh;
     width: 66vw;
     overflow: hidden;
 }
@@ -243,9 +250,11 @@ html,body{
     width: 100%;
 }
 
-.add_book__title,.about_form__title {
+.add_book__title,
+.about_form__title {
     font-weight: 600;
     font-size: 30px;
+    margin: 2rem 0;
 }
 
 .search_book__title {
@@ -277,8 +286,9 @@ html,body{
     cursor: pointer;
 }
 
-.book_form,.about_form {
-    margin: 5rem 0;
+.book_form,
+.about_form {
+    margin: 3rem 0;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -292,7 +302,8 @@ html,body{
     font-size: 18px;
 }
 
-.book_form_add,.about_form_add {
+.book_form_add,
+.about_form_add {
     display: flex;
     flex-direction: column;
     background: var(--white-color);
@@ -303,7 +314,8 @@ html,body{
     width: 90%;
 }
 
-.book_form_add>div,.about_form_add>div {
+.book_form_add>div,
+.about_form_add>div {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -312,13 +324,17 @@ html,body{
     width: 100%;
 }
 
-.book_form_add>div label,.about_form_add>div label {
+.book_form_add>div label,
+.about_form_add>div label {
     font-weight: 400;
     font-size: 16px;
     color: var(--main-label-title);
 }
 
-.book_form_add>div input,.book_form_add>div textarea,.about_form_add>div input,.about_form_add>div textarea {
+.book_form_add>div input,
+.book_form_add>div textarea,
+.about_form_add>div input,
+.about_form_add>div textarea {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -329,7 +345,8 @@ html,body{
     border-radius: 10px;
 }
 
-.book_form_add>div button,.about_form_add>div button {
+.book_form_add>div button,
+.about_form_add>div button {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -343,15 +360,18 @@ html,body{
     padding: .5rem 0;
 }
 
-  .join_us .join_us_title,.contact_us .contact_us_title {
+.join_us .join_us_title,
+.contact_us .contact_us_title {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 600;
     font-size: 30px;
     line-height: 196.19%;
     color: var(--main-title);
-  }
-  .join_us .join_us_table, .contact_us .contact_us_table {
+}
+
+.join_us .join_us_table table,
+.contact_us .contact_us_table {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-collapse: collapse;
     font-family: "Nunito Sans";
@@ -360,47 +380,66 @@ html,body{
     font-size: 14px;
     line-height: 115%;
     text-align: center;
-  }
-  .join_us .join_us_table th,.contact_us .contact_us_table th {
+}
+
+.join_us .join_us_table table th,
+.contact_us .contact_us_table table th {
     background-color: var(--background);
     color: var(--white-color);
-  }
-  .join_us .join_us_table th, .join_us .join_us_table td,.contact_us .contact_us_table th, .contact_us .contact_us_table td {
+}
+
+.join_us .join_us_table table th,
+.join_us .join_us_table table td,
+.contact_us .contact_us_table table th,
+.contact_us .contact_us_table table td {
     padding: 8px 22.5px;
-  }
-  .join_us .join_us_table tr:nth-child(odd), .contact_us .contact_us_table tr:nth-child(odd) {
+}
+
+.join_us .join_us_table table tr:nth-child(odd),
+.contact_us .contact_us_table table tr:nth-child(odd) {
     background-color: #F9FAFC;
-  }
-  .join_us .join_us_table{
-     width: 70%;
-  }
-  .contact_us {
+}
+
+.join_us .join_us_table table {
+    width: 70%;
+}
+
+.contact_us {
     margin: 100px 0;
-  }
-  .contact_us .contact_us_table{
+}
+
+.contact_us .contact_us_table table {
     width: 100%;
-  }
-@media screen and (max-width:991px){
-    .sidebar{
+}
+
+@media screen and (max-width:991px) {
+    .sidebar {
         width: 0;
     }
+
     .main {
         left: 0;
         padding: 4rem 1rem;
         width: 95vw;
     }
 }
-@media screen and (max-width:576px){
-  .main{
-    width: 88vw;
-  }
-  .search_book_form input {
-    width: 50%;
-  }
-  .book_form_add,.about_form_add {
-    padding: 10px 20px 20px;
-  }
-  .join_us .join_us_table,.contact_us .contact_us_table{
-    overflow-x: scroll;
-  }
+
+@media screen and (max-width:576px) {
+    .main {
+        width: 88vw;
+    }
+
+    .search_book_form input {
+        width: 50%;
+    }
+
+    .book_form_add,
+    .about_form_add {
+        padding: 10px 20px 20px;
+    }
+
+    .join_us .join_us_table,
+    .contact_us .contact_us_table {
+        overflow-x: scroll;
+    }
 }
