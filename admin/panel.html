@@ -7,6 +7,7 @@
     <title>Panel</title>
     <!-- Css -->
     <link rel="stylesheet" href="./assets/css/panel.css" />
+    <link rel="stylesheet" href="assets/css/nav.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -16,6 +17,21 @@
     />
   </head>
   <body>
+    <!-- Responsive Nav -->
+    <div class="navbar">
+      <div class="nav_left">
+        <div class="nav_img">
+          <img src="./assets/img/Vector_red.png" alt="">
+        </div>
+        <div class="nav_title">
+          <h2>LIBRARY</h2>
+          <p>Book store</p>
+        </div>
+      </div>
+      <div class="right_nav">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
     <!-- SideBar -->
     <div class="sidebar">
       <div class="sidebar__header">
@@ -25,6 +41,9 @@
         <div class="header__title">
           <h2>LIBRARY</h2>
           <p>Admin Panel</p>
+        </div>
+        <div class="close_sidebar">
+          <i class="fa-solid fa-xmark"></i>
         </div>
       </div>
       <div class="sidebar__list">
@@ -64,7 +83,7 @@
           <img src="./assets/img/Vector.png" alt="Vector.png" />
         </div>
         <div class="list__title">
-          <h2><a href="">Logout</a></h2>
+          <h2><a href="" id="log_out">Logout</a></h2>
         </div>
       </div>
     </div>
