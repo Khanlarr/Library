@@ -1,5 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap');
 
+/* /* Small devices (portrait tablets and large phones, 600px and up) 
+@media only screen and (max-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) 
+@media only screen and (max-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) 
+@media only screen and (max-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) 
+@media only screen and (max-width: 1200px) {...}
+ */
 :root {
   --bg-color: #fffaf5;
   --hero-bg-color: #720418;
@@ -12,10 +24,9 @@
 }
 
 body {
-  width: 100%;
-  padding: 100px 150px;
+  padding: 100px 100px;
   background-color: #fffaf5;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat';
 }
 
 .content {
@@ -26,18 +37,42 @@ body {
 .main-container {
   display: flex;
 
-  height: 90vh;
+  height: 80vh;
 }
 
 .title__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: 40px;
+  margin-right: 70px;
+  padding: 20px;
+}
+
+.title__text {
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.title__link {
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #e16a00;
+  color: #fff;
+  padding: 10px;
+  width: 200px;
+  margin-top: 20px;
+}
+
+.title__link:hover {
+  background-color: #ae5302;
 }
 
 .hero__container {
   position: relative;
+  padding-right: 40px;
 }
 
 .hero__background-1 {
@@ -45,7 +80,7 @@ body {
 
   position: absolute;
   top: 0;
-  left: 70px;
+  left: 40px;
   width: 205px;
   height: 250px;
 }
@@ -54,7 +89,7 @@ body {
   background-color: #720418;
   position: absolute;
   top: 20px;
-  left: 250px;
+  left: 200px;
   width: 200px;
   height: 250px;
 }
@@ -63,7 +98,7 @@ body {
   background-color: #720418;
   position: absolute;
   top: 40px;
-  left: 20px;
+  left: 0px;
   width: 500px;
   height: 370px;
 }
@@ -72,7 +107,7 @@ body {
   background-color: #720418;
   position: absolute;
   top: 380px;
-  left: 100px;
+  left: 70px;
   width: 295px;
   height: 75px;
 }
@@ -80,8 +115,155 @@ body {
 .hero__img {
   position: absolute;
   top: 70px;
-  left: 0;
+  left: -30px;
   z-index: 99;
-  width: 463px;
-  height: 280px;
+  width: 490px;
+  height: 300px;
+}
+
+.catalog__text {
+  margin: 20px auto;
+}
+
+.catalog__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.catalog__item {
+  font-weight: 600;
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  flex-basis: 30%;
+
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
+}
+
+.info__text {
+  margin: auto;
+}
+
+.info__container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.info__item {
+  padding: 20px;
+  display: flex;
+}
+
+.info__num {
+  font-size: 50px;
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+.delivery__container {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.delivery__text {
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.delivery__paragraph {
+  display: block;
+  padding: 0 150px;
+  font-size: 12px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+  .body {
+    padding: 0;
+    margin: 0;
+  }
+
+  .main-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .title__container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .title__text {
+    font-size: 14px;
+  }
+
+  .hero__background-1 {
+    width: 100px;
+    height: 129.54px;
+    top: 20px;
+    left: 40px;
+  }
+
+  .hero__background-2 {
+    width: 100px;
+    height: 129.54px;
+    top: 30px;
+    left: 120px;
+  }
+
+  .hero__background-3 {
+    width: 275px;
+    height: 185px;
+  }
+
+  .hero__background-4 {
+    width: 150px;
+    height: 55px;
+    left: 70px;
+    top: 180px;
+  }
+
+  .hero__img {
+    width: 300px;
+    height: 170px;
+    left: 0;
+    top: 50px;
+  }
+
+  .catalog__text {
+    margin: 0;
+    padding: 0;
+  }
+
+  .catalog__container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+
+    margin-bottom: 100px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .delivery__paragraph {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 992px) {
+}
+
+@media only sreen and (max-width: 1200px) {
 }
