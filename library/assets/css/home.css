@@ -36,7 +36,7 @@ body {
 
 .main-container {
   display: flex;
-  height: 40vh;
+  height: 50vh;
 }
 
 .title__container {
@@ -201,8 +201,7 @@ body {
   }
 
   .title__container {
-    width: 100%;
-
+    width: 80%;
     margin-bottom: 20px;
     padding-bottom: 0;
   }
