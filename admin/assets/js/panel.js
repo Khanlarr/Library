@@ -10,14 +10,19 @@ if (localStorage.getItem("user")) {
   // Girishi yoxlamaq
   const joinUsTableShow = (object) => {
     let join_us_table = document.querySelector(".join_us_table table");
-    object?.map((obj) => {
+    join_us_table.innerHTML=`<tr>
+    <th>#</th>
+    <th>Full Name</th>
+    <th>Email Address</th>
+  </tr>`
+  Object.entries(object)?.map((obj,index) => {
       let tr = document.createElement("tr");
       let td_id = document.createElement("td");
       let td_name = document.createElement("td");
       let td_email = document.createElement("td");
-      td_id.innerHTML = obj.id;
-      td_name.innerHTML = obj.name;
-      td_email.innerHTML = obj.email;
+      td_id.innerHTML = index+1;
+      td_name.innerHTML = obj[1].name;
+      td_email.innerHTML = obj[1].email;
       tr.append(td_id, td_name, td_email);
       join_us_table.append(tr);
     });
