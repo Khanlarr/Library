@@ -109,3 +109,20 @@
     font-weight: 400;
     font-size: 16px;
 }
+
+@media only screen and (max-width: 530px){
+    #mid_div{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    #comment_div{
+        display: none;
+    }
+    #user_comment_div{
+        display: none;
+    }
+}
+
+@media (min-width: 531px) and (max-width: 768px){}
+@media (min-width: 769px) and (max-width: 992px){}
