@@ -1,65 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search</title>
-    <!-- Css -->
-    <link rel="stylesheet" href="./assets/css/search.css">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search</title>
+  <!-- Css -->
+  <link rel="stylesheet" href="./assets/css/search.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/SearchMain.css">
 </head>
+
 <body>
-    <!-- Modal -->
-    <div class="modal">
-        <div class="join_us" id="join_div">
-          <h2>Join Us</h2>
-          <input type="text" class="name" placeholder="Full name" id="name"/>
-          <input type="text" class="email" placeholder="Email" id="email"/>
-          <button class="join_btn">Join</button>
+  <!-- Modal -->
+  <div class="modal">
+    <div class="join_us" id="join_div">
+      <h2>Join Us</h2>
+      <input type="text" class="name" placeholder="Full name" id="name" />
+      <input type="text" class="email" placeholder="Email" id="email" />
+      <button class="join_btn">Join</button>
+    </div>
+  </div>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__logo">
+      <div class="header__logo__img">
+        <img src="./assets/img/book.png" alt="Vector.png" />
+      </div>
+      <div class="header__logo__title">
+        <h2>LIBRARY</h2>
+        <p>Book Store</p>
+      </div>
+    </div>
+    <div class="header__list">
+      <ul>
+        <li><a href="./../library/index.html">Home</a></li>
+        <li><a href="./../library/catalog.html">Catalog</a></li>
+        <li><a href="./../library/aboutStore.html">About Store</a></li>
+        <li><a href="./../library/contactUs.html">Contact Us</a></li>
+        <li><a href="./../library/search.html">Search</a></li>
+      </ul>
+      <div><img src="./assets/img/remove.png" alt=""></div>
+    </div>
+    <div class="user_bar">
+      <div class="header__join_us">
+        <img src="./assets/img/Combined Shape.png" alt="" />
+        <p>Join Us</p>
+      </div>
+      <div class="header__responsive_menu">
+        <p><i class="fa-solid fa-bars"></i></p>
+      </div>
+    </div>
+  </header>
+  <!-- Main -->
+  <div class="contain">
+    <h2>Search</h2>
+    <div class="main">
+      <div class="left">
+        <input type="text" placeholder="Search..">
+        <button>Search</button>
+      </div>
+      <div class="right">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="left">
+                <img src="assets/img/bookSearch.png" alt="Book img">
+              </div>
+              <div class="right">
+                <h3 class="title">Order in Chaos</h3>
+                <p class="author">Konstantin Koptelov</p>
+                <p class="info">We work without holidays and weekends! Residents of Kiev can receive an order on the day
+                  of its registration. Customers from other cities of Ukraine can receive an order within 1-5 days,
+                  depending on the location of the settlement and the selected delivery method. Orders over UAH 1000 are
+                  delivered free of charge *. You can see the available methods, exact terms and cost of delivery during
+                  checkout in the order basket, after selecting the delivery city </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="left">
+                <img src="assets/img/bookSearch.png" alt="Book img">
+              </div>
+              <div class="right">
+                <h3 class="title">Order in Chaos</h3>
+                <p class="author">Konstantin Koptelov</p>
+                <p class="info">We work without holidays and weekends! Residents of Kiev can receive an order on the day
+                  of its registration. Customers from other cities of Ukraine can receive an order within 1-5 days,
+                  depending on the location of the settlement and the selected delivery method. Orders over UAH 1000 are
+                  delivered free of charge *. You can see the available methods, exact terms and cost of delivery during
+                  checkout in the order basket, after selecting the delivery city </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
         </div>
       </div>
-      <!-- Header -->
-      <header class="header">
-        <div class="header__logo">
-          <div class="header__logo__img">
-            <img src="./assets/img/book.png" alt="Vector.png" />
-          </div>
-          <div class="header__logo__title">
-            <h2>LIBRARY</h2>
-            <p>Book Store</p>
-          </div>
+    </div>
+  </div>
+  <!-- Social Media -->
+  <div class="social_media">
+    <div class="social_media_title">
+      <h2>Follow us on social media</h2>
+    </div>
+    <div class="social_media_icons">
+      <div><a href="https://www.facebook.com/profile.php?id=100074404984307&mibextid=ZbWKwL"><img
+            src="./assets/img/facebook.png" alt=""></a></div>
+      <div><a href=""><img src="./assets/img/twitter.png" alt=""></a></div>
+      <div><a href="https://www.instagram.com/invites/contact/?i=puwjohhyw2op&utm_content=lzxn6re"><img
+            src="./assets/img/instagram.png" alt=""></a></div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer_content">
+      <div class="footer_logo">
+        <div class="footer__logo__img">
+          <img src="./assets/img/vector-white.png" alt="Vector.png" />
         </div>
-        <div class="header__list">
-        <ul>
-          <li><a href="./../library/index.html">Home</a></li>
-          <li><a href="./../library/catalog.html">Catalog</a></li>
-          <li><a href="./../library/aboutStore.html">About Store</a></li>
-          <li><a href="./../library/contactUs.html">Contact Us</a></li>
-          <li><a href="./../library/search.html">Search</a></li>
-        </ul>
-        <div><img src="./assets/img/remove.png" alt=""></div>
+        <div class="footer__logo__title">
+          <h2>LIBRARY</h2>
+          <p>Book Store</p>
+        </div>
       </div>
-        <div class="user_bar">
-          <div class="header__join_us">
-            <img src="./assets/img/Combined Shape.png" alt="" />
-            <p>Join Us</p>
-          </div>
-          <div class="header__responsive_menu">
-            <p><i class="fa-solid fa-bars"></i></p>
-          </div>
-        </div>
-      </header>
-    <!-- Main -->
-    <!-- Footer -->
-    
-    <!-- Js -->
-    <script src="./assets/js/search.js"></script>
+      <div class="footer_information">
+        <p class="title">
+          Popular
+        </p>
+        <p>
+          Programming
+        </p>
+        <p>
+          Books for children
+        </p>
+        <p>
+          Psychology
+        </p>
+        <p>
+          Business
+        </p>
+      </div>
+      <div class="footer_information">
+        <p class="title">
+          Information
+        </p>
+        <p>
+          Delivery
+        </p>
+        <p>
+          Payment
+        </p>
+        <p>
+          About the store
+        </p>
+      </div>
+      <div class="footer_information">
+        <p class="title">
+          Help
+        </p>
+        <p>
+          Contacts
+        </p>
+        <p>
+          Purchase returns
+        </p>
+        <p>
+          Buyer help
+        </p>
+      </div>
+      <div class="footer_information">
+        <p class="number">+994 51 677-62-62</p>
+        <p class="calling">Request a call</p>
+      </div>
+    </div>
+    <p class="footer_end">
+      All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy
+    </p>
+  </div>
+  <!-- Js -->
+  <script src="./assets/js/search.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
 </body>
+
 </html>
