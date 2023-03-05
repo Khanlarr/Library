@@ -7,9 +7,24 @@
     <title>Contact</title>
     <!-- Css -->
     <link rel="stylesheet" href="./assets/css/contact.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
+    <!-- Modal -->
+    <div class="modal">
+      <div class="join_us" id="join_div">
+        <h2>Join Us</h2>
+        <input type="text" class="name" placeholder="Full name" />
+        <input type="text" class="email" placeholder="Email" />
+        <button class="join_btn">Join</button>
+      </div>
+    </div>
     <!-- Header -->
     <header class="header">
       <div class="header__logo">
@@ -21,26 +36,40 @@
           <p>Book Store</p>
         </div>
       </div>
-      <ul class="header__list">
+      <div class="header__list">
+      <ul>
         <li><a href="">Home</a></li>
         <li><a href="">Catalog</a></li>
         <li><a href="">About Store</a></li>
         <li><a href="">Contact Us</a></li>
         <li><a href="">Search</a></li>
       </ul>
-      <div class="header__join_us">
-        <img src="./assets/img/Combined Shape.png" alt="" />
-        <p>Join Us</p>
-      </div>
-      <div class="header__responsive_menu">
-        <img src="./assets/img/Combined Shape.png" alt="">
-        <p><i class="fa-solid fa-bars"></i></p>
+      <div><img src="./assets/img/remove.png" alt=""></div>
+    </div>
+      <div class="user_bar">
+        <div class="header__join_us">
+          <img src="./assets/img/Combined Shape.png" alt="" />
+          <p>Join Us</p>
+        </div>
+        <div class="header__responsive_menu">
+          <p><i class="fa-solid fa-bars"></i></p>
+        </div>
       </div>
     </header>
     <!-- Main -->
+    <div class="contact___us">
+      <div class="contact___us_title"><h2>Contact Us</h2></div>
+      <div class="contact___us_form">
+        <input type="text" placeholder="Full Name" id="full_name" required />
+        <input type="text" placeholder="Email" id="email" required />
+        <input type="text" placeholder="Address" id="address" required />
+        <input type="tel" placeholder="Phone" id="phone" required />
+        <button>Send</button>
+      </div>
+    </div>
     <!-- Footer -->
 
     <!-- Js -->
-    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/contact.js" type="module"></script>
   </body>
 </html>
