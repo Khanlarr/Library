@@ -395,3 +395,24 @@ table {
         margin-bottom: 0;
     }
 }
+ /* ------------------------------------------------------- */
+body{
+    font-family:Montserrat;
+}
+.header__links{
+    display: flex;
+    flex-direction: row;
+}
+.header__link{
+    padding: 0px 10px;
+}
+.header_1{
+    border: 1px solid red;
+    display: flex;
+    
+}
+
+ .all_books__container{
+    display: flex;
+    justify-content: space-around;
+}

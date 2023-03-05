@@ -434,7 +434,7 @@ h1{
         font-size: 16px;
         line-height: 176.19%;
     }
-    img{
+    .book>img{
 
         padding-bottom: 50px;
         height: 140px;
@@ -454,7 +454,7 @@ h1{
         font-size: 18px;
         line-height: 196.19%;
     }
-    img{
+    .book>img{
 
         padding-bottom: 90px;
         height: 250px;
@@ -474,7 +474,7 @@ h1{
         font-size: 20px;
         line-height: 196.19%;
     }
-    img{
+    .book>img{
 
         padding-bottom: 90px;
         height: 300px;
