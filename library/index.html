@@ -7,9 +7,55 @@
     <title>Home</title>
     <!-- Css -->
     <link rel="stylesheet" href="./assets/css/home.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
   </head>
   <body>
-    <!-- Header -->
+   <!-- Modal -->
+   <div class="modal">
+    <div class="join_us" id="join_div">
+      <h2>Join Us</h2>
+      <input type="text" class="name" placeholder="Full name" id="name"/>
+      <input type="text" class="email" placeholder="Email" id="email"/>
+      <button class="join_btn">Join</button>
+    </div>
+  </div>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__logo">
+      <div class="header__logo__img">
+        <img src="./assets/img/book.png" alt="Vector.png" />
+      </div>
+      <div class="header__logo__title">
+        <h2>LIBRARY</h2>
+        <p>Book Store</p>
+      </div>
+    </div>
+    <div class="header__list">
+    <ul>
+      <li><a href="./../library/index.html">Home</a></li>
+      <li><a href="./../library/catalog.html">Catalog</a></li>
+      <li><a href="./../library/aboutStore.html">About Store</a></li>
+      <li><a href="./../library/contactUs.html">Contact Us</a></li>
+      <li><a href="./../library/search.html">Search</a></li>
+    </ul>
+    <div><img src="./assets/img/remove.png" alt=""></div>
+  </div>
+    <div class="user_bar">
+      <div class="header__join_us">
+        <img src="./assets/img/Combined Shape.png" alt="" />
+        <p>Join Us</p>
+      </div>
+      <div class="header__responsive_menu">
+        <p><i class="fa-solid fa-bars"></i></p>
+      </div>
+    </div>
+  </header>
     <!-- Main -->
     <main class="content">
       <div class="main-container">
