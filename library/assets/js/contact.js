@@ -33,8 +33,11 @@ btn.addEventListener("click",(e)=>{
         alert("Zehmet olmasa melumatlari daxil edin")
     }
 })
+
+
 let joinUs_Title=document.querySelector('.header__join_us p')
 if(joinUs_Title.innerHTML){joinUs_Title.innerHTML=JSON.parse(localStorage.getItem('join'))?.name || 'Join Us';}
+
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('active_modal')) {
         document.querySelector('.modal').classList.remove('active_modal')
@@ -52,13 +55,17 @@ document.querySelector('.header__responsive_menu p').addEventListener('click',()
 document.querySelector('.header__list>div').addEventListener('click',()=>{
     document.querySelector('.header__list').classList.remove('active')
 })
+
 document.querySelectorAll('.header__list ul li a').forEach((e)=>{
     var t=e.innerHTML.toLowerCase().split(' ')
     var s='';
     console.log(t);
     if(t.length>0){
     while(t.length>0){
-        s=s+t[0];
+        if(t[0]==='home'){s=s+'index';}
+        else{
+              s=s+t[0];
+        }
         t.shift();
     }
     }
