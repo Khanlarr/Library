@@ -212,6 +212,14 @@ body {
     color: var(--header-text-color);
     font-weight: 400;
     font-size: 16px;
+    transition: all .3s ease;
+}
+
+.header__list ul li a:hover,
+.header__list ul li a.active {
+    color: var(--header-text-active-color);
+    border-bottom: 1px solid var(--header-text-active-color);
+    transition: all .3s ease;
 }
 
 .header__join_us {
@@ -356,6 +364,35 @@ body {
     cursor: pointer;
 }
 
+.social_media {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    height: 20rem;
+    padding: 2rem 0;
+    font-family: 'Montserrat';
+    font-style: normal;
+}
+
+.social_media_title {
+    color: var(--header-text-color);
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.social_media_icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.social_media_icons>div img{
+    width: 100%;
+    height: 90%;
+}
+
 @media screen and (max-width:991px) {
     .header__join_us>p {
         display: none;
@@ -364,15 +401,17 @@ body {
     .header__responsive_menu p {
         display: block;
     }
-    .header__list{
-       width: 0;
-       height: 0;
-       overflow: hidden;
-       transition: all .3s linear;
-       position: fixed;
-       top: 0;
-       left: 0;
+
+    .header__list {
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        transition: all .3s linear;
+        position: fixed;
+        top: 0;
+        left: 0;
     }
+
     .header__list.active {
         display: flex;
         justify-content: space-between;
@@ -389,7 +428,7 @@ body {
         display: flex;
         flex-direction: column;
         gap: 3rem;
-        padding:1rem 2rem;
+        padding: 1rem 2rem;
     }
 
     .header__list.active ul li a {
@@ -397,14 +436,23 @@ body {
         font-size: 1.5rem;
     }
 
+    .header__list ul li a:hover,
+    .header__list ul li a.active {
+        color: var(--header-text-active-color);
+        border-bottom: 1px solid var(--header-text-active-color);
+        transition: all .3s ease;
+    }
+
     .header__list.active>div {
         display: block;
-        padding:1rem 2rem;
+        padding: 1rem 2rem;
     }
-    .header__list.active>div img{
+
+    .header__list.active>div img {
         width: 150%;
         height: 150%;
     }
+
     .modal .join_us {
         width: 60%;
         font-size: 38px;
@@ -442,5 +490,18 @@ body {
     .contact___us_form button {
         font-size: 16px;
         padding: .7rem 1.5rem;
+    }
+    .social_media {
+        height: 16rem;
+    }
+    .social_media_icons {
+        gap: .8rem;
+    }
+    .social_media_title {
+        font-size: 18px;
+    }
+    .social_media_icons>div img{
+        width: 80%;
+        height: 70%;
     }
 }
