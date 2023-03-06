@@ -316,6 +316,9 @@ table {
 }
 
 @media  screen and (max-width:991px) {
+    .swiper-button-next,.swiper-button-prev{
+        display: none !important;
+    }
     .header__join_us>p {
         display: none;
     }
@@ -382,6 +385,9 @@ table {
     
 }
 @media screen and (max-width:576px) {
+    .contain .main .right .swiper .swiper-wrapper .swiper-slide .left img {
+        width: 83%!important;
+    }
     .header {
         padding: 1.5rem;
     }
