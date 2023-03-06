@@ -285,7 +285,23 @@ body {
     outline: none;
     cursor: pointer;
 }
-
+.search_result{
+    margin-top:1rem;
+    background: #F1F0F0;
+    border-radius: 35px;
+    width: 254px;
+    height: 94px;
+    display: flex;
+    gap:1rem;
+}
+.search_result>h3{
+    font-family: 'Preah Vihear';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 26px;
+color: #BCBCBC;
+}
 .book_form,
 .about_form {
     margin: 3rem 0;
