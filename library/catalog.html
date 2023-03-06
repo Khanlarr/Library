@@ -14,6 +14,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script src="./assets/js/catalog.js" defer type="module"></script>
   </head>
   <body>
     <!-- Modal -->
@@ -63,7 +73,7 @@
         <div>
           <ul class="header__links">
             <li><a href="/" class="header__link">Fantastic</a></li>
-            <li><a href="/" class="header__link">Self-development</a></li>
+            <li><a href="/" class="header__link">Bestseller</a></li>
             <li><a href="/" class="header__link">Baby</a></li>
             <li><a href="/" class="header__link">Classic</a></li>
             <li><a href="/" class="header__link">Manga</a></li>
@@ -71,189 +81,290 @@
         </div>
       </div>
 
-      <div class="items">
-        <div class="all_books__item book">
-          <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book__img" />
+      <div class="all_books__container">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div><p>Order in Chaos</p></div>
-          <div><p>Konstantin Koptelov</p></div>
-          <div>
-            <button class="book__btn">Read More</button>
-          </div>
-        </div>
-
-        <div class="all_books__item book">
-          <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book__img" />
-          </div>
-          <div><p>Order in Chaos</p></div>
-          <div><p>Konstantin Koptelov</p></div>
-          <div>
-            <button class="book__btn">Read More</button>
-          </div>
-        </div>
-
-        <div class="all_books__item book">
-          <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book__img" />
-          </div>
-          <div><p>Order in Chaos</p></div>
-          <div><p>Konstantin Koptelov</p></div>
-          <div>
-            <button class="book__btn">Read More</button>
-          </div>
-        </div>
-
-        <div class="all_books__item book">
-          <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book__img" />
-          </div>
-          <div><p>Order in Chaos</p></div>
-          <div><p>Konstantin Koptelov</p></div>
-          <div>
-            <button class="book__btn">Read More</button>
-          </div>
-        </div>
-
-        <div class="all_books__item book">
-          <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book__img" />
-          </div>
-          <div><p>Order in Chaos</p></div>
-          <div><p>Konstantin Koptelov</p></div>
-          <div>
-            <button class="book__btn">Read More</button>
-          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
+
       <div class="bestseller__container">
-        <div class="bestseller__text">Bestseller</div>
+        <div class="text__container">Bestseller</div>
 
-        <div class="items">
-          <div class="bestseller__item book">
-            <div class="img__container">
-              <img src="assets/img/image 3.png" alt="" class="book__img" />
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
             </div>
-            <div><p>Order in Chaos</p></div>
-            <div><p>Konstantin Koptelov</p></div>
-            <div>
-              <button class="book__btn">Read More</button>
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="bestseller__item book">
-            <div class="img__container">
-              <img src="assets/img/image 3.png" alt="" class="book__img" />
-            </div>
-            <div><p>Order in Chaos</p></div>
-            <div><p>Konstantin Koptelov</p></div>
-            <div>
-              <button class="book__btn">Read More</button>
-            </div>
-          </div>
-
-          <div class="bestseller__item book">
-            <div class="img__container">
-              <img src="assets/img/image 3.png" alt="" class="book__img" />
-            </div>
-            <div><p>Order in Chaos</p></div>
-            <div><p>Konstantin Koptelov</p></div>
-            <div>
-              <button class="book__btn">Read More</button>
-            </div>
-          </div>
-
-          <div class="bestseller__item book">
-            <div class="img__container">
-              <img src="assets/img/image 3.png" alt="" class="book__img" />
-            </div>
-            <div><p>Order in Chaos</p></div>
-            <div><p>Konstantin Koptelov</p></div>
-            <div>
-              <button class="book__btn">Read More</button>
-            </div>
-          </div>
-
-          <div class="bestseller__item book">
-            <div class="img__container">
-              <img src="assets/img/image 3.png" alt="" class="book__img" />
-            </div>
-            <div><p>Order in Chaos</p></div>
-            <div><p>Konstantin Koptelov</p></div>
-            <div>
-              <button class="book__btn">Read More</button>
-            </div>
-          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
+
       <div class="new_release__container">
-        <div class="new_release__text">New release</div>
-
-        <div class="rehime">
-          <div class="new_release__item book">
-            <div class="img__container">
-              <img src="assets/img/image 3.png" alt="" class="book__img" />
+        <div class="text__container">New Release</div>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
             </div>
-            <div><p>Order in Chaos</p></div>
-            <div><p>Konstantin Koptelov</p></div>
-            <div>
-              <button class="book__btn">Read More</button>
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="item__container">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img"
+                />
+                <div class="item__info">
+                  <div class="item__name">Order in chaos</div>
+                  <div class="author__name">konstantin koptelov</div>
+                  <div class="item__btn">READ MORE</div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="new_release__item book">
-            <div class="img__container">
-              <img src="assets/img/image 3.png" alt="" class="book__img" />
-            </div>
-            <div><p>Order in Chaos</p></div>
-            <div><p>Konstantin Koptelov</p></div>
-            <div>
-              <button class="book__btn">Read More</button>
-            </div>
-          </div>
-
-          <div class="new_release__item book">
-            <div class="img__container">
-              <img src="assets/img/image 3.png" alt="" class="book__img" />
-            </div>
-            <div><p>Order in Chaos</p></div>
-            <div><p>Konstantin Koptelov</p></div>
-            <div>
-              <button class="book__btn">Read More</button>
-            </div>
-          </div>
-
-          <div class="new_release__item book">
-            <div class="img__container">
-              <img src="assets/img/image 3.png" alt="" class="book__img" />
-            </div>
-            <div><p>Order in Chaos</p></div>
-            <div><p>Konstantin Koptelov</p></div>
-            <div>
-              <button class="book__btn">Read More</button>
-            </div>
-          </div>
-
-          <div class="new_release__item book">
-            <div class="img__container">
-              <img src="assets/img/image 3.png" alt="" class="book__img" />
-            </div>
-            <div><p>Order in Chaos</p></div>
-            <div><p>Konstantin Koptelov</p></div>
-            <div>
-              <button class="book__btn">Read More</button>
-            </div>
-          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </div>
-
-    <!-- Footer -->
-
-    <!-- Js -->
-
-    <script src="./assets/js/catalog.js" type="module"></script>
-</body>
+  </body>
 </html>
-

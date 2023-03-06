@@ -76,6 +76,36 @@ if (localStorage.getItem("user")) {
   const book_type = document.querySelector(".book_form_add .book_type input");
   const book_add = document.querySelector(".book_form_add .book_submit");
 
+  
+const api_search=document.querySelector('#api_search');
+const api_search_btn=document.querySelector('#api_search_btn');
+const search_result=document.querySelector('.search_result');
+
+api_search_btn.addEventListener('click',async(e)=>{
+  const api=await fetch(`https://www.googleapis.com/books/v1/volumes?q=${api_search.value}`)
+  const data=await api.json();
+  search_result.innerHTML='';
+  data?.items?.map(dt=>{
+    let div =document.createElement('div');
+    div.classList.add('check');
+    let h3=document.createElement('h3');
+    if(dt?.volumeInfo?.title && dt?.volumeInfo?.imageLinks?.thumbnail && dt?.volumeInfo?.authors && dt?.volumeInfo?.description){
+      h3.innerHTML=dt?.volumeInfo?.title;
+      div.append(h3);
+      search_result.append(div)
+    }
+    div.addEventListener('click',(e)=>{
+      api_search.value=''
+      book_name.value=dt?.volumeInfo?.title;
+      book_author_name.value=dt?.volumeInfo?.authors[0];
+      book_image_url.value=dt?.volumeInfo?.imageLinks?.thumbnail;
+      book_description.value=dt?.volumeInfo?.description;
+      search_result.innerHTML='';
+    })
+  })
+  e.preventDefault();
+})
+
   book_add.addEventListener("click", (e) => {
     let book = {
       name: book_name.value,
@@ -116,7 +146,15 @@ if (localStorage.getItem("user")) {
     ".about_form_add .description textarea"
   );
   const about_add = document.querySelector(".about_form_add .about_submit");
-
+ 
+   const getAbout=async()=>{
+    const getData=await get(ref(db, "/library/about"));
+    const data=await getData.val();
+    about_title.value=data?.title||'';
+    about_image_url.value=data?.image||''
+    about_description.value=data?.description||""
+   }
+   getAbout();
   about_add.addEventListener("click", (e) => {
     let about = {
       title: about_title.value,
@@ -124,12 +162,7 @@ if (localStorage.getItem("user")) {
       description: about_description.value,
     };
     if (about.title !== "" && about.image !== "" && about.description !== "") {
-      let key = push(ref(db, "/library/about")).key;
-      set(ref(db, `/library/about/${key}`), about);
-      about_title.value = "";
-      about_image_url.value = "";
-      about_description.value = "";
-      about = {};
+      set(ref(db, `/library/about`), about);
       alert("Success");
     } else {
       alert("Məlumatları daxil edin");
@@ -155,14 +188,10 @@ document.querySelector(".fa-xmark").addEventListener("click", () => {
   document.querySelector(".close_sidebar").classList.toggle("active_close");
   document.querySelector(".navbar").classList.toggle("active_navbar");
 });
-
-const api_search=document.querySelector('#api_search');
-const api_search_btn=document.querySelector('#api_search_btn');
-
-api_search_btn.addEventListener('click',async(e)=>{
-  const api=await fetch(`https://www.googleapis.com/books/v1/volumes?q=${api_search.value}`)
-  const data=await api.json();
-  console.log(data);
-  api_search.value=''
-  e.preventDefault();
+document.querySelectorAll('.sidebar__list').forEach(list=>{
+  list.addEventListener('click',()=>{
+    document.querySelector(".sidebar").classList.toggle("active_sidebar");
+    document.querySelector(".close_sidebar").classList.toggle("active_close");
+    document.querySelector(".navbar").classList.toggle("active_navbar");
+  })
 })

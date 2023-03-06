@@ -68,3 +68,18 @@ join_us_btn.addEventListener("click",(e)=>{
     }
 }
 })
+
+const catalog__container=document.querySelector('.catalog__container');
+
+onValue(ref(db, "/library/catalog/categories"), async (snap) => {
+    var object = (await snap.val()) || {};
+    catalog__container.innerHTML='';
+    object?.map(obj=>{
+    let div=document.createElement('div');
+    div.classList.add('catalog__item');
+    let a=document.createElement('a');
+    a.innerHTML=obj;
+    div.append(a);
+    catalog__container.append(div)
+    })
+  });
