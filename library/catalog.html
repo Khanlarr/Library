@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catalog</title>
     <!-- Css -->
-    <link rel="stylesheet" href="./assets/css/catalog.css">
+    <link rel="stylesheet" href="./assets/css/catalog.css" />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-</head>
-<body>
-   <!-- Modal -->
-   <div class="modal">
-    <div class="join_us" id="join_div">
-      <h2>Join Us</h2>
-      <input type="text" class="name" placeholder="Full name" id="name"/>
-      <input type="text" class="email" placeholder="Email" id="email"/>
-      <button class="join_btn">Join</button>
-    </div>
-  </div>
-  <!-- Header -->
-  <header class="header">
-    <div class="header__logo">
-      <div class="header__logo__img">
-        <img src="./assets/img/book.png" alt="Vector.png" />
-      </div>
-      <div class="header__logo__title">
-        <h2>LIBRARY</h2>
-        <p>Book Store</p>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Modal -->
+    <div class="modal">
+      <div class="join_us" id="join_div">
+        <h2>Join Us</h2>
+        <input type="text" class="name" placeholder="Full name" id="name" />
+        <input type="text" class="email" placeholder="Email" id="email" />
+        <button class="join_btn">Join</button>
       </div>
     </div>
-    <div class="header__list">
-    <ul>
-      <li><a href="./../library/index.html">Home</a></li>
-      <li><a href="./../library/catalog.html">Catalog</a></li>
-      <li><a href="./../library/aboutStore.html">About Store</a></li>
-      <li><a href="./../library/contactUs.html">Contact Us</a></li>
-      <li><a href="./../library/search.html">Search</a></li>
-    </ul>
-    <div><img src="./assets/img/remove.png" alt=""></div>
-  </div>
-    <div class="user_bar">
-      <div class="header__join_us">
-        <img src="./assets/img/Combined Shape.png" alt="" />
-        <p>Join Us</p>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__logo">
+        <div class="header__logo__img">
+          <img src="./assets/img/book.png" alt="Vector.png" />
+        </div>
+        <div class="header__logo__title">
+          <h2>LIBRARY</h2>
+          <p>Book Store</p>
+        </div>
       </div>
-      <div class="header__responsive_menu">
-        <p><i class="fa-solid fa-bars"></i></p>
+      <div class="header__list">
+        <ul>
+          <li><a href="./../library/index.html">Home</a></li>
+          <li><a href="./../library/catalog.html">Catalog</a></li>
+          <li><a href="./../library/aboutStore.html">About Store</a></li>
+          <li><a href="./../library/contactUs.html">Contact Us</a></li>
+          <li><a href="./../library/search.html">Search</a></li>
+        </ul>
+        <div><img src="./assets/img/remove.png" alt="" /></div>
       </div>
-    </div>
-  </header>
+      <div class="user_bar">
+        <div class="header__join_us">
+          <img src="./assets/img/Combined Shape.png" alt="" />
+          <p>Join Us</p>
+        </div>
+        <div class="header__responsive_menu">
+          <p><i class="fa-solid fa-bars"></i></p>
+        </div>
+      </div>
+    </header>
     <!-- Main -->
-    <main>
-      <div class="header_1">
-        <div><h2>All Books</h2></div>
+    <div class="main">
+      <div class="head__container">
+        <div class="all_books__text"><h2>All Books</h2></div>
         <div>
           <ul class="header__links">
             <li><a href="/" class="header__link">Fantastic</a></li>
@@ -71,191 +71,189 @@
         </div>
       </div>
 
-      <div class="all_books__container">
-        <div class="all_books_item book">
+      <div class="items">
+        <div class="all_books__item book">
           <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book_img">
+            <img src="assets/img/image 3.png" alt="" class="book__img" />
           </div>
           <div><p>Order in Chaos</p></div>
-          <div> <p> Konstantin Koptelov </p> </div>
+          <div><p>Konstantin Koptelov</p></div>
           <div>
-            <button class="book_btn">Read More</button>
+            <button class="book__btn">Read More</button>
           </div>
         </div>
 
-        <div class="all_books_item book">
+        <div class="all_books__item book">
           <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book_img">
+            <img src="assets/img/image 3.png" alt="" class="book__img" />
           </div>
           <div><p>Order in Chaos</p></div>
-          <div> <p> Konstantin Koptelov </p> </div>
+          <div><p>Konstantin Koptelov</p></div>
           <div>
-            <button class="book_btn">Read More</button>
+            <button class="book__btn">Read More</button>
           </div>
         </div>
 
-        <div class="all_books_item book">
+        <div class="all_books__item book">
           <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book_img">
+            <img src="assets/img/image 3.png" alt="" class="book__img" />
           </div>
           <div><p>Order in Chaos</p></div>
-          <div> <p> Konstantin Koptelov </p> </div>
+          <div><p>Konstantin Koptelov</p></div>
           <div>
-            <button class="book_btn">Read More</button>
+            <button class="book__btn">Read More</button>
           </div>
         </div>
 
-        <div class="all_books_item book">
+        <div class="all_books__item book">
           <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book_img">
+            <img src="assets/img/image 3.png" alt="" class="book__img" />
           </div>
           <div><p>Order in Chaos</p></div>
-          <div> <p> Konstantin Koptelov </p> </div>
+          <div><p>Konstantin Koptelov</p></div>
           <div>
-            <button class="book_btn">Read More</button>
+            <button class="book__btn">Read More</button>
           </div>
         </div>
 
-        <div class="all_books_item book">
+        <div class="all_books__item book">
           <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book_img">
+            <img src="assets/img/image 3.png" alt="" class="book__img" />
           </div>
           <div><p>Order in Chaos</p></div>
-          <div> <p> Konstantin Koptelov </p> </div>
+          <div><p>Konstantin Koptelov</p></div>
           <div>
-            <button class="book_btn">Read More</button>
+            <button class="book__btn">Read More</button>
           </div>
         </div>
-        
       </div>
+      <div class="bestseller__container">
+        <div class="bestseller__text">Bestseller</div>
 
-
-      <div class="bestseller_text"><h2>Bestseller</h2></div>
-
-      <div class="all_books__container">
-        <div class="all_books_item book">
-          <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book_img">
+        <div class="items">
+          <div class="bestseller__item book">
+            <div class="img__container">
+              <img src="assets/img/image 3.png" alt="" class="book__img" />
+            </div>
+            <div><p>Order in Chaos</p></div>
+            <div><p>Konstantin Koptelov</p></div>
+            <div>
+              <button class="book__btn">Read More</button>
+            </div>
           </div>
-          <div><p>Order in Chaos</p></div>
-          <div> <p> Konstantin Koptelov </p> </div>
-          <div>
-            <button class="book_btn">Read More</button>
+
+          <div class="bestseller__item book">
+            <div class="img__container">
+              <img src="assets/img/image 3.png" alt="" class="book__img" />
+            </div>
+            <div><p>Order in Chaos</p></div>
+            <div><p>Konstantin Koptelov</p></div>
+            <div>
+              <button class="book__btn">Read More</button>
+            </div>
+          </div>
+
+          <div class="bestseller__item book">
+            <div class="img__container">
+              <img src="assets/img/image 3.png" alt="" class="book__img" />
+            </div>
+            <div><p>Order in Chaos</p></div>
+            <div><p>Konstantin Koptelov</p></div>
+            <div>
+              <button class="book__btn">Read More</button>
+            </div>
+          </div>
+
+          <div class="bestseller__item book">
+            <div class="img__container">
+              <img src="assets/img/image 3.png" alt="" class="book__img" />
+            </div>
+            <div><p>Order in Chaos</p></div>
+            <div><p>Konstantin Koptelov</p></div>
+            <div>
+              <button class="book__btn">Read More</button>
+            </div>
+          </div>
+
+          <div class="bestseller__item book">
+            <div class="img__container">
+              <img src="assets/img/image 3.png" alt="" class="book__img" />
+            </div>
+            <div><p>Order in Chaos</p></div>
+            <div><p>Konstantin Koptelov</p></div>
+            <div>
+              <button class="book__btn">Read More</button>
+            </div>
           </div>
         </div>
-
-        <div class="all_books_item book">
-          <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book_img">
-          </div>
-          <div><p>Order in Chaos</p></div>
-          <div> <p> Konstantin Koptelov </p> </div>
-          <div>
-            <button class="book_btn">Read More</button>
-          </div>
-        </div>
-
-        <div class="all_books_item book">
-          <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book_img">
-          </div>
-          <div><p>Order in Chaos</p></div>
-          <div> <p> Konstantin Koptelov </p> </div>
-          <div>
-            <button class="book_btn">Read More</button>
-          </div>
-        </div>
-
-        <div class="all_books_item book">
-          <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book_img">
-          </div>
-          <div><p>Order in Chaos</p></div>
-          <div> <p> Konstantin Koptelov </p> </div>
-          <div>
-            <button class="book_btn">Read More</button>
-          </div>
-        </div>
-
-        <div class="all_books_item book">
-          <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book_img">
-          </div>
-          <div><p>Order in Chaos</p></div>
-          <div> <p> Konstantin Koptelov </p> </div>
-          <div>
-            <button class="book_btn">Read More</button>
-          </div>
-        </div>
-        
       </div>
+      <div class="new_release__container">
+        <div class="new_release__text">New release</div>
 
-      <div><h2>New releases</h2></div>
-
-      <div class="all_books__container">
-        <div class="all_books_item book">
-          <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book_img">
+        <div class="rehime">
+          <div class="new_release__item book">
+            <div class="img__container">
+              <img src="assets/img/image 3.png" alt="" class="book__img" />
+            </div>
+            <div><p>Order in Chaos</p></div>
+            <div><p>Konstantin Koptelov</p></div>
+            <div>
+              <button class="book__btn">Read More</button>
+            </div>
           </div>
-          <div><p>Order in Chaos</p></div>
-          <div> <p> Konstantin Koptelov </p> </div>
-          <div>
-            <button class="book_btn">Read More</button>
+
+          <div class="new_release__item book">
+            <div class="img__container">
+              <img src="assets/img/image 3.png" alt="" class="book__img" />
+            </div>
+            <div><p>Order in Chaos</p></div>
+            <div><p>Konstantin Koptelov</p></div>
+            <div>
+              <button class="book__btn">Read More</button>
+            </div>
+          </div>
+
+          <div class="new_release__item book">
+            <div class="img__container">
+              <img src="assets/img/image 3.png" alt="" class="book__img" />
+            </div>
+            <div><p>Order in Chaos</p></div>
+            <div><p>Konstantin Koptelov</p></div>
+            <div>
+              <button class="book__btn">Read More</button>
+            </div>
+          </div>
+
+          <div class="new_release__item book">
+            <div class="img__container">
+              <img src="assets/img/image 3.png" alt="" class="book__img" />
+            </div>
+            <div><p>Order in Chaos</p></div>
+            <div><p>Konstantin Koptelov</p></div>
+            <div>
+              <button class="book__btn">Read More</button>
+            </div>
+          </div>
+
+          <div class="new_release__item book">
+            <div class="img__container">
+              <img src="assets/img/image 3.png" alt="" class="book__img" />
+            </div>
+            <div><p>Order in Chaos</p></div>
+            <div><p>Konstantin Koptelov</p></div>
+            <div>
+              <button class="book__btn">Read More</button>
+            </div>
           </div>
         </div>
-
-        <div class="all_books_item book">
-          <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book_img">
-          </div>
-          <div><p>Order in Chaos</p></div>
-          <div> <p> Konstantin Koptelov </p> </div>
-          <div>
-            <button class="book_btn">Read More</button>
-          </div>
-        </div>
-
-        <div class="all_books_item book">
-          <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book_img">
-          </div>
-          <div><p>Order in Chaos</p></div>
-          <div> <p> Konstantin Koptelov </p> </div>
-          <div>
-            <button class="book_btn">Read More</button>
-          </div>
-        </div>
-
-        <div class="all_books_item book">
-          <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book_img">
-          </div>
-          <div><p>Order in Chaos</p></div>
-          <div> <p> Konstantin Koptelov </p> </div>
-          <div>
-            <button class="book_btn">Read More</button>
-          </div>
-        </div>
-
-        <div class="all_books_item book">
-          <div class="img__container">
-            <img src="assets/img/image 3.png" alt="" class="book_img">
-          </div>
-          <div><p>Order in Chaos</p></div>
-          <div> <p> Konstantin Koptelov </p> </div>
-          <div>
-            <button class="book_btn">Read More</button>
-          </div>
-        </div>
-        
       </div>
+    </div>
 
-  
-    </main>
-   
     <!-- Footer -->
-    
+
     <!-- Js -->
-    <script src="./assets/js/catalog.js"></script>
+
+    <script src="./assets/js/catalog.js" type="module"></script>
 </body>
 </html>
+

@@ -139,7 +139,7 @@ if (localStorage.getItem("user")) {
 }
 // logout
 else {
-  window.location.assign("./../../../admin/admin.html");
+  window.location.assign("./../../../admin/index.html");
 }
 document.querySelector("#log_out").addEventListener("click", () => {
   localStorage.removeItem("user");
@@ -155,3 +155,14 @@ document.querySelector(".fa-xmark").addEventListener("click", () => {
   document.querySelector(".close_sidebar").classList.toggle("active_close");
   document.querySelector(".navbar").classList.toggle("active_navbar");
 });
+
+const api_search=document.querySelector('#api_search');
+const api_search_btn=document.querySelector('#api_search_btn');
+
+api_search_btn.addEventListener('click',async(e)=>{
+  const api=await fetch(`https://www.googleapis.com/books/v1/volumes?q=${api_search.value}`)
+  const data=await api.json();
+  console.log(data);
+  api_search.value=''
+  e.preventDefault();
+})

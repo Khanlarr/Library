@@ -1,3 +1,5 @@
+import { db } from "./connection.js";
+import { get,set,ref,onValue,push } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
 let joinUs_Title=document.querySelector('.header__join_us p')
 if(joinUs_Title.innerHTML){joinUs_Title.innerHTML=JSON.parse(localStorage.getItem('join'))?.name || 'Join Us';}
 
