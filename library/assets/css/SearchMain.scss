@@ -167,7 +167,7 @@ body {
     margin-top: 40px;
 
     .footer_content {
-        width: 80%;
+        width: 85%;
         margin: auto;
         display: flex;
         justify-content: space-between;
@@ -219,7 +219,9 @@ body {
                 }
             }
         }
-
+        .footer-infos{
+            display: flex;
+        }
         .footer_information {
             font-family: 'Montserrat';
             font-style: normal;
@@ -227,7 +229,7 @@ body {
             font-size: 18px;
             line-height: 196.19%;
             color: #FFFFFF;
-
+            padding-right: 25px;
             p {
                 cursor: pointer;
             }
@@ -454,10 +456,10 @@ body {
                 font-weight: 400;
                 font-size: 18px;
                 line-height: 196.19%;
-
                 color: #FFFFFF;
                 display: flex;
                 flex-direction: row;
+                padding-right: 0px;
 
                 p {
                     display: none;

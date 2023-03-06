@@ -153,7 +153,7 @@ body {
   margin-top: 40px;
 }
 .footer .footer_content {
-  width: 80%;
+  width: 85%;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -197,6 +197,9 @@ body {
   align-items: center;
   color: #FFFFFF;
 }
+.footer .footer_content .footer-infos {
+  display: flex;
+}
 .footer .footer_content .footer_information {
   font-family: "Montserrat";
   font-style: normal;
@@ -204,6 +207,7 @@ body {
   font-size: 18px;
   line-height: 196.19%;
   color: #FFFFFF;
+  padding-right: 25px;
 }
 .footer .footer_content .footer_information p {
   cursor: pointer;
@@ -402,6 +406,7 @@ body {
     color: #FFFFFF;
     display: flex;
     flex-direction: row;
+    padding-right: 0px;
   }
   .footer .footer_content .footer_information p {
     display: none;
