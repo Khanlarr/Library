@@ -231,6 +231,15 @@ body {
     background-color: var(--main-background);
     min-height: 400vh;
 }
+.admin{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    position: absolute;
+    right: 5rem;
+    top: 2rem;
+    font-size: 20px;
+}
 
 .main {
     position: absolute;
@@ -289,19 +298,30 @@ body {
     margin-top:1rem;
     background: #F1F0F0;
     border-radius: 35px;
-    width: 254px;
-    height: 94px;
+    /* width: 254px; */
     display: flex;
     gap:1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
-.search_result>h3{
-    font-family: 'Preah Vihear';
+.search_result>div{
+width: 90%;
+height: 25px;
+padding: 1.4rem 3rem;
+}
+.search_result>div>h3{
+font-family: 'Preah Vihear';
 font-style: normal;
 font-weight: 400;
-font-size: 14px;
+font-size: 20px;
 line-height: 26px;
 color: #BCBCBC;
+/* line-height: 1.5rem; */
+overflow-wrap: break-word;
+cursor: pointer;
 }
+
 .book_form,
 .about_form {
     margin: 3rem 0;
@@ -429,14 +449,19 @@ color: #BCBCBC;
 }
 
 @media screen and (max-width:991px) {
-    .sidebar {
+    .sidebar{
         width: 0;
-    }
+        overflow: hidden;
+        transition: all .3s ease;
+      }
 
     .main {
         left: 0;
         padding: 4rem 1rem;
         width: 95vw;
+    }
+    .admin{
+        display: none;
     }
 }
 
