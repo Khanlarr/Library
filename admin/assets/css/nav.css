@@ -9,9 +9,11 @@
 @media screen and (max-width: 991px) {
   .navbar {
     background: #FFFAF5;
-    padding: 16px;
+    z-index: 2000;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 16px;
   }
   .navbar .nav_left {
     display: flex;
@@ -50,6 +52,7 @@
   }
   .active_sidebar {
     width: 80%;
+    overflow: visible;
   }
   .close_sidebar {
     margin-left: auto;
@@ -61,4 +64,5 @@
   .active_close {
     display: inline-block;
   }
-}/*# sourceMappingURL=nav.css.map */
+}
+/*# sourceMappingURL=nav.css.map */
