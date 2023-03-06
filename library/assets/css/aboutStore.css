@@ -316,7 +316,11 @@ table {
 }
 
 #umumi{
-    padding: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 4rem;
+   padding: 1.5rem 5rem;
 }
 
 h1{
@@ -330,9 +334,17 @@ h1{
 }
 .mid{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    width: 50vw;
 }
-
+.book{
+width: 50vw;
+}
+.book img{
+    width: 100%;
+    height: auto;
+}
 #text{
     font-family: 'Montserrat';
     font-style: normal;
@@ -404,9 +416,25 @@ h1{
         width: 60%;
         font-size: 38px;
     }
+    #umumi{
+        flex-direction: column-reverse;
+     }
+    .mid{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    #text{
+        font-size: 20px;
+        line-height: 196.19%;
+        text-align: center;
+    }
+    .book{
+        width: 80%;
+    }
 }
 
-@media screen and (max-width:576px) {
+ @media screen and (max-width:576px) {
     .header {
         padding: 1.5rem;
     }
@@ -421,64 +449,25 @@ h1{
     }
 }
 @media only screen and (max-width: 530px){
-    .mid{
-        justify-content: center;
-        align-items: center;
-        flex-direction: column-reverse; 
-
-    }
-    h1{
-        display: none;
-    }
     #text{
         font-size: 16px;
         line-height: 176.19%;
     }
-    .book>img{
-
-        padding-bottom: 50px;
-        height: 140px;
+    .book{
+        width: 100%;
     }
 }
-
-@media (min-width: 531px) and (max-width: 768px){
-    .mid{
-        justify-content: center;
-        align-items: center;
-        flex-direction: column-reverse; 
-    }
-    h1{
-        display: none;
+@media screen and (max-width: 768px){
+    .book{
+        width: 90%;
     }
     #text{
         font-size: 18px;
         line-height: 196.19%;
     }
-    .book>img{
-
-        padding-bottom: 90px;
-        height: 250px;
-    }   
-}
-
-@media (min-width: 769px) and (max-width: 992px){
-    .mid{
-        justify-content: center;
-        align-items: center;
-        flex-direction: column-reverse; 
+    #umumi{
+        padding: 1.5rem;
     }
-    h1{
-        display: none;
-    }
-    #text{
-        font-size: 20px;
-        line-height: 196.19%;
-    }
-    .book>img{
-
-        padding-bottom: 90px;
-        height: 300px;
-    }   
-}
+} 
 
 
