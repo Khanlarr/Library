@@ -154,8 +154,9 @@ console.log(bestsellerBooks);
 const bestseller = document.querySelector('.bestseller');
 
 function showBestseller() {
-  bestsellerBooks.map((book) => {
-    console.log(book);
+  bestsellerBooks.forEach((book) => {
+    console.log(typeof book);
+    let swiper = $('<div></div>').attr('class', 'swiper-slide');
     let div = $('<div></div>').attr('class', 'item__container');
     let img = $('<img></img>')
       .attr('class', 'item__img')
@@ -164,13 +165,25 @@ function showBestseller() {
     let name = $('<div></div>').attr('class', 'item__name').text(book.name);
     let author = $('<div></div>').attr('class', 'author__name');
     let btn = $('<div></div>').attr('class', 'item__btn');
-    info.append(name, author, btn);
-    div.append(img, info);
-    bestseller.append(div);
-    console.log(div);
+    info.html(name, author, btn);
+    div.html(img, info);
+    swiper.html(div);
+    bestseller.prepend(name);
+    console.log(book.name);
   });
 }
-
+/* let swiperr = $('<div></div>').attr('class', 'swiper-slide');
+let div = $('<div></div>').attr('class', 'item__container');
+let img = $('<img></img>').attr('class', 'item__img').attr('src', book.image);
+let info = $('<div></div>').attr('class', 'item__info');
+let name = $('<div></div>').attr('class', 'item__name');
+let author = $('<div></div>').attr('class', 'author__name');
+let btn = $('<div></div>').attr('class', 'item__btn');
+info.html(name, author, btn);
+div.html(img, info);
+swiper.html(div);
+bestseller.prepend(swiperr);
+ */
 /* <div class="item__container bestseller">
                 <img
                   src="./assets/img/image 3.png"
