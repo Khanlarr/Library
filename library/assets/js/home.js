@@ -24,7 +24,6 @@ document.querySelector('.header__list>div').addEventListener('click',()=>{
 document.querySelectorAll('.header__list ul li a').forEach((e)=>{
     var t=e.innerHTML.toLowerCase().split(' ')
     var s='';
-    console.log(t);
     if(t.length>0){
     while(t.length>0){
         if(t[0]==='home'){s=s+'index';}
@@ -83,3 +82,8 @@ onValue(ref(db, "/library/catalog/categories"), async (snap) => {
     catalog__container.append(div)
     })
   });
+
+  onValue(ref(db,'/library'),async (snap)=>{
+    var object = (await snap.val()) || {};
+    console.log(object);
+  })

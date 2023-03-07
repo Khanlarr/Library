@@ -10,17 +10,17 @@ if (localStorage.getItem("user")) {
   // Girishi yoxlamaq
   const joinUsTableShow = (object) => {
     let join_us_table = document.querySelector(".join_us_table table");
-    join_us_table.innerHTML=`<tr>
+    join_us_table.innerHTML = `<tr>
     <th>#</th>
     <th>Full Name</th>
     <th>Email Address</th>
-  </tr>`
-  Object.entries(object)?.map((obj,index) => {
+  </tr>`;
+    Object.entries(object)?.map((obj, index) => {
       let tr = document.createElement("tr");
       let td_id = document.createElement("td");
       let td_name = document.createElement("td");
       let td_email = document.createElement("td");
-      td_id.innerHTML = index+1;
+      td_id.innerHTML = index + 1;
       td_name.innerHTML = obj[1].name;
       td_email.innerHTML = obj[1].email;
       tr.append(td_id, td_name, td_email);
@@ -34,21 +34,21 @@ if (localStorage.getItem("user")) {
 
   const ContactTableShow = (object) => {
     let contact = document.querySelector(".contact_us_table table");
-    contact.innerHTML=`<tr>
+    contact.innerHTML = `<tr>
     <th>#</th>
     <th>Full Name</th>
     <th>Address</th>
     <th>Email Address</th>
     <th>Phone Number</th>
-  </tr>`
-    Object.entries(object)?.map((obj,index) => {
+  </tr>`;
+    Object.entries(object)?.map((obj, index) => {
       let tr = document.createElement("tr");
       let td_id = document.createElement("td");
       let td_name = document.createElement("td");
       let td_address = document.createElement("td");
       let td_email = document.createElement("td");
       let td_phoneNumber = document.createElement("td");
-      td_id.innerHTML = index+1;
+      td_id.innerHTML = index + 1;
       td_name.innerHTML = obj[1].name;
       td_address.innerHTML = obj[1].address;
       td_email.innerHTML = obj[1].email;
@@ -74,37 +74,49 @@ if (localStorage.getItem("user")) {
     ".book_form_add .description textarea"
   );
   const book_type = document.querySelector(".book_form_add .book_type input");
+  const book_year = document.querySelector(".book_form_add .book_year input");
   const book_add = document.querySelector(".book_form_add .book_submit");
 
-  
-const api_search=document.querySelector('#api_search');
-const api_search_btn=document.querySelector('#api_search_btn');
-const search_result=document.querySelector('.search_result');
+  const api_search = document.querySelector("#api_search");
+  const api_search_btn = document.querySelector("#api_search_btn");
+  const search_result = document.querySelector(".search_result");
 
-api_search_btn.addEventListener('click',async(e)=>{
-  const api=await fetch(`https://www.googleapis.com/books/v1/volumes?q=${api_search.value}`)
-  const data=await api.json();
-  search_result.innerHTML='';
-  data?.items?.map(dt=>{
-    let div =document.createElement('div');
-    div.classList.add('check');
-    let h3=document.createElement('h3');
-    if(dt?.volumeInfo?.title && dt?.volumeInfo?.imageLinks?.thumbnail && dt?.volumeInfo?.authors && dt?.volumeInfo?.description){
-      h3.innerHTML=dt?.volumeInfo?.title;
-      div.append(h3);
-      search_result.append(div)
-    }
-    div.addEventListener('click',(e)=>{
-      api_search.value=''
-      book_name.value=dt?.volumeInfo?.title;
-      book_author_name.value=dt?.volumeInfo?.authors[0];
-      book_image_url.value=dt?.volumeInfo?.imageLinks?.thumbnail;
-      book_description.value=dt?.volumeInfo?.description;
-      search_result.innerHTML='';
-    })
-  })
-  e.preventDefault();
-})
+  api_search_btn.addEventListener("click", async (e) => {
+    const api = await fetch(
+      `https://www.googleapis.com/books/v1/volumes?q=${api_search.value}`
+    );
+    const data = await api.json();
+    console.log(data);
+    search_result.innerHTML = "";
+    data?.items?.map((dt) => {
+      let div = document.createElement("div");
+      div.classList.add("check");
+      let h3 = document.createElement("h3");
+      if (
+        dt?.volumeInfo?.title &&
+        dt?.volumeInfo?.imageLinks?.thumbnail &&
+        dt?.volumeInfo?.authors &&
+        dt?.volumeInfo?.description &&
+        dt?.volumeInfo?.categories &&
+        dt?.volumeInfo?.publishedDate
+      ) {
+        h3.innerHTML = dt?.volumeInfo?.title;
+        div.append(h3);
+        search_result.append(div);
+      }
+      div.addEventListener("click", (e) => {
+        api_search.value = "";
+        book_name.value = dt?.volumeInfo?.title;
+        book_author_name.value = dt?.volumeInfo?.authors[0];
+        book_image_url.value = dt?.volumeInfo?.imageLinks?.thumbnail;
+        book_description.value = dt?.volumeInfo?.description;
+        book_type.value = dt?.volumeInfo?.categories?.[0];
+        book_year.value = dt?.volumeInfo?.publishedDate.slice(0,4);
+        search_result.innerHTML = "";
+      });
+    });
+    e.preventDefault();
+  });
 
   book_add.addEventListener("click", (e) => {
     let book = {
@@ -146,15 +158,15 @@ api_search_btn.addEventListener('click',async(e)=>{
     ".about_form_add .description textarea"
   );
   const about_add = document.querySelector(".about_form_add .about_submit");
- 
-   const getAbout=async()=>{
-    const getData=await get(ref(db, "/library/about"));
-    const data=await getData.val();
-    about_title.value=data?.title||'';
-    about_image_url.value=data?.image||''
-    about_description.value=data?.description||""
-   }
-   getAbout();
+
+  const getAbout = async () => {
+    const getData = await get(ref(db, "/library/about"));
+    const data = await getData.val();
+    about_title.value = data?.title || "";
+    about_image_url.value = data?.image || "";
+    about_description.value = data?.description || "";
+  };
+  getAbout();
   about_add.addEventListener("click", (e) => {
     let about = {
       title: about_title.value,
@@ -188,10 +200,10 @@ document.querySelector(".fa-xmark").addEventListener("click", () => {
   document.querySelector(".close_sidebar").classList.toggle("active_close");
   document.querySelector(".navbar").classList.toggle("active_navbar");
 });
-document.querySelectorAll('.sidebar__list').forEach(list=>{
-  list.addEventListener('click',()=>{
+document.querySelectorAll(".sidebar__list").forEach((list) => {
+  list.addEventListener("click", () => {
     document.querySelector(".sidebar").classList.toggle("active_sidebar");
     document.querySelector(".close_sidebar").classList.toggle("active_close");
     document.querySelector(".navbar").classList.toggle("active_navbar");
-  })
-})
+  });
+});
