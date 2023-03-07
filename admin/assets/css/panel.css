@@ -159,9 +159,10 @@ body {
 .sidebar {
     background-color: var(--background);
     width: 30rem;
-    min-height: 400%;
+    /* min-height: 400%; */
     z-index: 10000;
-    position: absolute;
+    height: 100vh;
+    position: fixed;
     left: 0;
     top: 0;
     overflow: hidden;
@@ -309,6 +310,9 @@ body {
 width: 90%;
 height: 25px;
 padding: 1.4rem 3rem;
+}
+.search_result>div:last-child{
+    margin-bottom: 4rem;
 }
 .search_result>div>h3{
 font-family: 'Preah Vihear';
@@ -459,6 +463,7 @@ cursor: pointer;
         left: 0;
         padding: 4rem 1rem;
         width: 95vw;
+        margin-top:5rem;
     }
     .admin{
         display: none;
