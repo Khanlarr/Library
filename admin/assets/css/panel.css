@@ -148,11 +148,12 @@ table {
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-html,
 body {
     overflow-x: hidden;
+    background-color: var(--main-background);
 }
 
 
@@ -228,10 +229,6 @@ body {
     padding-top: .4rem;
 }
 
-.container {
-    background-color: var(--main-background);
-    min-height: 400vh;
-}
 .admin{
     display: flex;
     align-items: center;

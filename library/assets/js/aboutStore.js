@@ -97,3 +97,7 @@ onValue(ref(db, "/library/about"), async (snap) => {
      in the order basket, after selecting the delivery city.`;
   about_description_img.src = object?.image || "./assets/img/image 1.png";
 });
+
+window.addEventListener('scroll',()=>{
+  document.querySelector('.header').classList.toggle('active',window.scrollY>0);
+})

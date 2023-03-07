@@ -83,7 +83,7 @@ onValue(ref(db, "/library/catalog/categories"), async (snap) => {
     })
   });
 
-  onValue(ref(db,'/library'),async (snap)=>{
-    var object = (await snap.val()) || {};
-    console.log(object);
-  })
+
+window.addEventListener('scroll',()=>{
+    document.querySelector('.header').classList.toggle('active',window.scrollY>0);
+})

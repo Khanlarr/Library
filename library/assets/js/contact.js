@@ -103,3 +103,7 @@ join_us_btn.addEventListener("click",(e)=>{
     }
 }
 })
+
+window.addEventListener('scroll',()=>{
+    document.querySelector('.header').classList.toggle('active',window.scrollY>0);
+})
