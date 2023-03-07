@@ -68,3 +68,42 @@ join_us_btn.addEventListener("click",(e)=>{
     }
 }
 })
+const showValues=(string,object)=>{
+    let swiper =document.querySelector('.swiper-wrapper')
+    swiper.innerHTML = "";
+    Object.entries(object)?.forEach(item=>{
+        if(item[1].name.toLowerCase().includes(string.toLowerCase())){
+            let slide = document.createElement('div')
+        slide.classList = 'swiper-slide'
+        swiper.append(slide)
+        let leftSlide = document.createElement('div')
+        leftSlide.classList = 'left'
+        slide.append(leftSlide)
+        let imgSlide = document.createElement('img')
+        imgSlide.src = item[1].image
+        leftSlide.append(imgSlide)
+        let rightSlide = document.createElement('div')
+        rightSlide.classList = 'right'
+        slide.append(rightSlide)
+        let title = document.createElement('h3')
+        title.classList = 'title'
+        title.innerHTML = item[1].name
+        rightSlide.append(title)
+        let author = document.createElement('p')
+        author.classList = 'author'
+        author.innerHTML = item[1].authorName
+        rightSlide.append(author)
+        let info = document.createElement('p')
+        info.classList = 'info'
+        info.innerHTML = item[1].description
+        rightSlide.append(info)
+        }
+        
+    })
+}
+document.querySelector('.search_input').addEventListener('input',(e)=>{
+    onValue(ref(db, "/library/book"), async (snap) => {
+        var object = (await snap.val()) || {};
+        showValues(e.target.value,object);
+      });
+})

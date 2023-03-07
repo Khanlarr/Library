@@ -78,15 +78,20 @@ body {
   background: white;
   padding: 30px;
 }
+.contain .main .right .swiper .swiper-slide .left img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 .contain .main .right .swiper .swiper-slide .right {
   background-color: white;
   padding: 30px 30px 30px 0;
+  font-size: 16px;
 }
 .contain .main .right .swiper .swiper-slide .right h3 {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 1.5em;
   line-height: 196.19%;
   display: flex;
   align-items: center;
@@ -96,7 +101,7 @@ body {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 1.125em;
   line-height: 196.19%;
   display: flex;
   align-items: center;
@@ -106,7 +111,7 @@ body {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875em;
   line-height: 196.19%;
   color: #241400;
   text-align: left;
@@ -301,36 +306,19 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-size: 14px;
   }
   .contain .main .right .swiper .swiper-wrapper .swiper-slide .right h3 {
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 196.19%;
     text-align: center;
-    color: #241400;
     display: block;
     align-items: normal;
   }
   .contain .main .right .swiper .swiper-wrapper .swiper-slide .right .author {
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 196.19%;
     text-align: center;
-    color: #241400;
     display: block;
     align-items: normal;
   }
   .contain .main .right .swiper .swiper-wrapper .swiper-slide .right .info {
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 196.19%;
-    color: #241400;
     text-align: left;
     display: block;
     align-items: normal;
