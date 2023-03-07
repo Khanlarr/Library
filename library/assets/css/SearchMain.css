@@ -228,6 +228,7 @@ body {
 }
 .footer .footer_content .footer-infos {
   display: flex;
+  gap: 1.5rem;
 }
 .footer .footer_content .footer_information {
   font-family: "Montserrat";
@@ -269,6 +270,9 @@ body {
   padding: 20px;
 } 
 .footer .end-responsive {
+  display: none;
+}
+.hr{
   display: none;
 }
 @media screen and (max-width: 786px) {
@@ -483,6 +487,9 @@ body {
     line-height: 196.19%;
     text-align: center;
     color: #FFFFFF;
+  }
+  .hr{
+    display: block;
   }
 } 
 
