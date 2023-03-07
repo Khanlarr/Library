@@ -117,4 +117,72 @@ const swiper = new Swiper('.mySwiper', {
   },
 });
 
-console.log(screen.width);
+/* onValue(ref(db, '/library/catalog/categories'), async (snap) => {
+  var object = (await snap.val()) || {};
+  catalog__container.innerHTML = '';
+  object?.map((obj) => {
+    let div = document.createElement('div');
+    div.classList.add('catalog__item');
+    let a = document.createElement('a');
+    a.innerHTML = obj;
+    div.append(a);
+    catalog__container.append(div);
+  });
+}); */
+
+onValue(ref(db, '/library'), async (snap) => {
+  var object = (await snap.val()) || {};
+  console.log(object);
+});
+
+let bestsellerBooks = [];
+
+onValue(ref(db, '/library/book'), async (snap) => {
+  var object = (await snap.val()) || {};
+  console.log(object);
+  console.log(Object.entries(object));
+  Object.entries(object).map((book) => {
+    console.log(book[1]);
+    bestsellerBooks.push(book[1]);
+    console.log(bestsellerBooks);
+    showBestseller();
+  });
+});
+
+console.log(bestsellerBooks);
+
+const bestseller = document.querySelector('.bestseller');
+
+function showBestseller() {
+  bestsellerBooks.map((book) => {
+    console.log(book);
+    let div = $('<div></div>').attr('class', 'item__container');
+    let img = $('<img></img>')
+      .attr('class', 'item__img')
+      .attr('src', book.image);
+    let info = $('<div></div>').attr('class', 'item__info');
+    let name = $('<div></div>').attr('class', 'item__name').text(book.name);
+    let author = $('<div></div>').attr('class', 'author__name');
+    let btn = $('<div></div>').attr('class', 'item__btn');
+    info.append(name, author, btn);
+    div.append(img, info);
+    bestseller.append(div);
+    console.log(div);
+  });
+}
+
+/* <div class="item__container bestseller">
+                <img
+                  src="./assets/img/image 3.png"
+                  alt="book image"
+                  class="item__img bestseller"
+                />
+                <div class="item__img bestseller">
+                  <div class="item__name bestseller">Order in chaos</div>
+                  <div class="author__name bestseller">konstantin koptelov</div>
+                  <div class="item__btn bestseller">READ MORE</div>
+                </div> 
+                 <div class="item__info bestseller">
+                  <div class="item__name bestseller">Order in chaos</div>
+                  <div class="author__name bestseller">konstantin koptelov</div>
+                  <div class="item__btn bestseller">*/

@@ -68,12 +68,14 @@ join_us_btn.addEventListener("click",(e)=>{
     }
 }
 })
-const showValues=(string,object)=>{
+let search_input=document.querySelector('.search_input');
+const showValues=(object)=>{
     let swiper =document.querySelector('.swiper-wrapper')
     swiper.innerHTML = "";
-    Object.entries(object)?.forEach(item=>{
-        if(item[1].name.toLowerCase().includes(string.toLowerCase())){
-            let slide = document.createElement('div')
+    Object.entries(object)?.map(item=>{
+        if(item?.[1]?.name.toLowerCase().includes(search_input.value.trim().toLowerCase())){
+            console.log(item?.[1]?.name);
+         let slide = document.createElement('div')
         slide.classList = 'swiper-slide'
         swiper.append(slide)
         let leftSlide = document.createElement('div')
@@ -95,15 +97,20 @@ const showValues=(string,object)=>{
         rightSlide.append(author)
         let info = document.createElement('p')
         info.classList = 'info'
-        info.innerHTML = item[1].description
+        info.innerHTML = item[1].description.slice(0,650) + '....'
         rightSlide.append(info)
         }
         
     })
 }
-document.querySelector('.search_input').addEventListener('input',(e)=>{
+document.querySelector('.search_book').addEventListener('click',(e)=>{
     onValue(ref(db, "/library/book"), async (snap) => {
         var object = (await snap.val()) || {};
-        showValues(e.target.value,object);
+        showValues(object);
       });
+      e.preventDefault();
+})
+
+window.addEventListener('scroll',()=>{
+    document.querySelector('.header').classList.toggle('active',window.scrollY>0);
 })
