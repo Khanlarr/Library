@@ -326,7 +326,7 @@ table {
 
 
 #back_btn{
-    padding: 3px 20px;
+    padding: 10px 20px;
     background: #E16A00;
     box-shadow: 0px 3px 8px rgba(225, 106, 0, 0.19);
     border-radius: 3px;
@@ -362,6 +362,7 @@ table {
     border-radius: 3px;
 }
 #blue>p{
+    padding: 10px;
     font-weight: 900;
     font-size: 12px;
     display: flex;
@@ -373,6 +374,10 @@ table {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+}
+#mid_left>p{
+    font-family: 'Montserrat';
+    padding: 10px 0px;
 }
 #kiev{
     
@@ -552,8 +557,14 @@ table {
     #mid_div{
         display: flex;
         flex-direction: column-reverse;
-        
         align-items: center;
+    }
+    #back_btn{
+        padding: 10px;
+    }
+
+    #blue>p{
+        padding: 10px;
     }
     #mid_img{
         padding: 80px 0px;
@@ -609,6 +620,10 @@ table {
         font-size: 30px; 
         text-align: center;
     }
+    #blue>p{
+        padding: 15px;
+    }
+
     #kiev{
         margin-left: 30px;
         font-family: 'Montserrat';
