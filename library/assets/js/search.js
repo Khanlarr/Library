@@ -24,10 +24,12 @@ if(joinUs_Title.innerHTML){
     if(localStorage.getItem('join')){
         updateSize()
         mainCloseBtn.addEventListener('click',()=>{
+            document.querySelector('.modal').classList.toggle('active_modal')
             localStorage.removeItem('join')
             location.reload()
         })
         respoCloseBtn.addEventListener('click',()=>{
+            document.querySelector('.modal').classList.toggle('active_modal')
             localStorage.removeItem('join')
             location.reload()
         })
