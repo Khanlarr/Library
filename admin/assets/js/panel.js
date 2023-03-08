@@ -124,6 +124,7 @@ if (localStorage.getItem("user")) {
       authorName: book_author_name.value,
       image: book_image_url.value,
       description: book_description.value,
+      year:book_year.value,
       type: book_type.value,
     };
     if (
@@ -131,7 +132,7 @@ if (localStorage.getItem("user")) {
       book.authorName !== "" &&
       book.image !== "" &&
       book.description !== "" &&
-      book.type !== ""
+      book.type !== "" && book.year!==""
     ) {
       let key = push(ref(db, "/library/book")).key;
       set(ref(db, `/library/book/${key}`), book);
@@ -140,6 +141,7 @@ if (localStorage.getItem("user")) {
       book_image_url.value = "";
       book_description.value = "";
       book_type.value = "";
+      book_year.value=""
       book = {};
       alert("Success");
     } else {
