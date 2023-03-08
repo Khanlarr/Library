@@ -86,24 +86,24 @@ join_us_btn.addEventListener('click', (e) => {
 
 const swiper = new Swiper('.mySwiper', {
   slidesPerView: 1,
-  spaceBetween: 10,
+  spaceBetween: 5,
 
   breakpoints: {
     576: {
       slidesPerView: 2,
-      spaceBetween: 10,
+      spaceBetween: 5,
     },
     768: {
       slidesPerView: 3,
-      spaceBetween: 20,
+      spaceBetween: 10,
     },
     912: {
       slidesPerView: 4,
-      spaceBetween: 30,
+      spaceBetween: 10,
     },
     1200: {
       slidesPerView: 5,
-      spaceBetween: 30,
+      spaceBetween: 10,
     },
   },
   pagination: {
