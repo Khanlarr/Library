@@ -187,6 +187,9 @@ onValue(ref(db, '/library'), async (snap) => {
   console.log(object);
 });
 
+let query = '';
+let query2 = '';
+
 const bestseller = document.querySelector('.bestseller');
 const newRelease = document.querySelector('.new_release');
 
@@ -198,10 +201,9 @@ onValue(ref(db, '/library/book'), async (snap) => {
   console.log(arr);
   let shortArr = arr.slice(0, 9);
   shortArr.map(function (e) {
-    console.log(e[1].name);
-    let name = e[1].name;
+    query = `?${e[0]}`;
 
-    show(e[1], bestseller);
+    show(e[1], bestseller, query);
   });
 
   arr.map(function (e) {
@@ -209,17 +211,21 @@ onValue(ref(db, '/library/book'), async (snap) => {
     if (year >= 2021) {
       let shortArr2 = [];
       shortArr2.push(e[1]);
+      query2 = `?+${e[0]}`;
+      console.log(query2);
       shortArr2.slice(0, 9);
       console.log(shortArr2);
       shortArr2.map((e) => {
-        show(e, newRelease);
+        console.log(e);
+
+        show(e, newRelease, query2);
       });
     }
   });
   console.log(arr);
 });
 
-function show(book, assignTo) {
+function show(book, assignTo, query) {
   let swiper = document.createElement('div');
   swiper.setAttribute('class', 'swiper-slide');
 
@@ -250,7 +256,7 @@ function show(book, assignTo) {
   btn.setAttribute('class', 'item__btn');
 
   let link = document.createElement('a');
-  link.setAttribute('href', '/library/book.html');
+  link.setAttribute('href', `/library/book.html${query}`);
   link.setAttribute('class', 'item__link');
   link.textContent = 'READ MORE';
 
