@@ -156,7 +156,8 @@ table {
     transition: all .3s linear;
     z-index: 999;
 }
-.header.active{
+
+.header.active {
     background: var(--background-active);
 }
 
@@ -239,10 +240,28 @@ table {
     gap: .6rem;
 }
 
+.header__responsive_menu {
+    display: none;
+}
+
 .header__responsive_menu p {
     display: none;
     color: var(--header-text-color);
     font-size: 1.5rem;
+}
+
+.header__join_us .close_button {
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    display: none;
+}
+
+.header__join_us .close_button:hover {
+    color: white;
+    background-color: green;
 }
 
 .modal {
@@ -324,22 +343,51 @@ table {
 .active_modal {
     display: block !important;
 }
-.swiper-slide{
+
+.swiper-slide {
     height: fit-content !important;
 }
-@media  screen and (max-width:991px) {
+
+@media screen and (max-width:991px) {
     .social_media {
         height: fit-content !important;
     }
-    .swiper-button-next,.swiper-button-prev{
+
+    .swiper-button-next,
+    .swiper-button-prev {
         display: none !important;
     }
+
     .header__join_us>p {
         display: none;
     }
 
+    .close_button {
+        display: none;
+    }
+
+    .header__responsive_menu {
+        display: flex;
+        align-items: center;
+    }
+
     .header__responsive_menu p {
         display: block;
+    }
+
+    .header__responsive_menu .close_button_repo {
+        display: none;
+        padding: 5px;
+        border: none;
+        border-radius: 10px;
+        background-color: red;
+        color: white;
+        margin-right: 10px;
+    }
+    .header__responsive_menu .close_button_repo:hover {
+        background-color: green;
+        color: white;
+        cursor: pointer;
     }
 
     .header__list {
@@ -397,12 +445,14 @@ table {
         width: 60%;
         font-size: 38px;
     }
-    
+
 }
+
 @media screen and (max-width:576px) {
     .contain .main .right .swiper .swiper-wrapper .swiper-slide .left img {
-        width: 83%!important;
+        width: 83% !important;
     }
+
     .header {
         padding: 1.5rem;
     }
