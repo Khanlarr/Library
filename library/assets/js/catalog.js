@@ -86,24 +86,24 @@ join_us_btn.addEventListener('click', (e) => {
 
 const swiper = new Swiper('.mySwiper', {
   slidesPerView: 1,
-  spaceBetween: 10,
+  spaceBetween: 5,
 
   breakpoints: {
     576: {
       slidesPerView: 2,
-      spaceBetween: 10,
+      spaceBetween: 5,
     },
     768: {
       slidesPerView: 3,
-      spaceBetween: 20,
+      spaceBetween: 10,
     },
     912: {
       slidesPerView: 4,
-      spaceBetween: 30,
+      spaceBetween: 10,
     },
     1200: {
       slidesPerView: 5,
-      spaceBetween: 30,
+      spaceBetween: 10,
     },
   },
   pagination: {
@@ -122,8 +122,8 @@ onValue(ref(db, '/library'), async (snap) => {
   console.log(object);
 });
 
-let bestsellerBooks = [];
 const bestseller = document.querySelector('.bestseller');
+const newRelease = document.querySelector('.new_release');
 
 onValue(ref(db, '/library/book'), async (snap) => {
   let object = (await snap.val()) || {};
@@ -134,14 +134,22 @@ onValue(ref(db, '/library/book'), async (snap) => {
   shortArr.map(function (e) {
     console.log(e[1].name);
     let name = e[1].name;
-    console.log(name);
-    show(e[1]);
+
+    show(e[1], bestseller);
   });
+
+  arr.map(function (e) {
+    let year = e[1].year;
+    if (year >= 2021) {
+      show(e[1], newRelease);
+    }
+  });
+  console.log(arr);
 });
 
 console.log(bestsellerBooks);
 
-function show(book) {
+function show(book, assignTo) {
   let swiper = document.createElement('div');
   swiper.setAttribute('class', 'swiper-slide');
 
@@ -175,5 +183,5 @@ function show(book) {
   info.prepend(name, author, btn);
   div.prepend(img, info);
   swiper.prepend(div);
-  bestseller.prepend(swiper);
+  assignTo.prepend(swiper);
 }
