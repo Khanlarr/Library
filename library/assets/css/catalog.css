@@ -506,9 +506,14 @@ body {
 .item__btn {
   padding: 5px;
   background-color: #e16a00;
+}
+
+.item__link {
+  text-decoration: none;
   color: #fff;
   font-size: 12px;
   font-weight: 900;
+  cursor: pointer;
 }
 
 .text__container {
