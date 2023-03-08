@@ -117,85 +117,63 @@ const swiper = new Swiper('.mySwiper', {
   },
 });
 
-/* onValue(ref(db, '/library/catalog/categories'), async (snap) => {
-  var object = (await snap.val()) || {};
-  catalog__container.innerHTML = '';
-  object?.map((obj) => {
-    let div = document.createElement('div');
-    div.classList.add('catalog__item');
-    let a = document.createElement('a');
-    a.innerHTML = obj;
-    div.append(a);
-    catalog__container.append(div);
-  });
-}); */
-
 onValue(ref(db, '/library'), async (snap) => {
-  var object = (await snap.val()) || {};
+  let object = (await snap.val()) || {};
   console.log(object);
 });
 
 let bestsellerBooks = [];
+const bestseller = document.querySelector('.bestseller');
 
 onValue(ref(db, '/library/book'), async (snap) => {
-  var object = (await snap.val()) || {};
+  let object = (await snap.val()) || {};
   console.log(object);
-  console.log(Object.entries(object));
-  Object.entries(object).map((book) => {
-    console.log(book[1]);
-    bestsellerBooks.push(book[1]);
-    console.log(bestsellerBooks);
-    showBestseller();
+
+  let arr = Object.entries(object);
+  let shortArr = arr.slice(0, 9);
+  shortArr.map(function (e) {
+    console.log(e[1].name);
+    let name = e[1].name;
+    console.log(name);
+    show(e[1]);
   });
 });
 
 console.log(bestsellerBooks);
 
-const bestseller = document.querySelector('.bestseller');
+function show(book) {
+  let swiper = document.createElement('div');
+  swiper.setAttribute('class', 'swiper-slide');
 
-function showBestseller() {
-  bestsellerBooks.forEach((book) => {
-    console.log(typeof book);
-    let swiper = $('<div></div>').attr('class', 'swiper-slide');
-    let div = $('<div></div>').attr('class', 'item__container');
-    let img = $('<img></img>')
-      .attr('class', 'item__img')
-      .attr('src', book.image);
-    let info = $('<div></div>').attr('class', 'item__info');
-    let name = $('<div></div>').attr('class', 'item__name').text(book.name);
-    let author = $('<div></div>').attr('class', 'author__name');
-    let btn = $('<div></div>').attr('class', 'item__btn');
-    info.html(name, author, btn);
-    div.html(img, info);
-    swiper.html(div);
-    bestseller.prepend(name);
-    console.log(book.name);
-  });
+  let div = document.createElement('div');
+  div.setAttribute('class', 'item__container');
+
+  let img = document.createElement('img');
+  img.setAttribute('src', book.image);
+  img.setAttribute('class', 'item__img');
+
+  let info = document.createElement('div');
+  info.setAttribute('class', 'item__info');
+
+  let name = document.createElement('div');
+  name.setAttribute('class', 'item__name');
+  if (book.name.length > 20) {
+    let short = book.name.slice(0, 20) + '...';
+    name.textContent = short;
+  } else {
+    name.textContent = book.name;
+  }
+
+  let author = document.createElement('div');
+  author.setAttribute('class', 'author__name');
+  author.textContent = book.authorName;
+
+  let btn = document.createElement('div');
+  btn.setAttribute('class', 'item__btn');
+  btn.textContent = 'READ MORE';
+
+  info.prepend(name, author, btn);
+  div.prepend(img, info);
+  swiper.prepend(div);
+  bestseller.prepend(swiper);
 }
-/* let swiperr = $('<div></div>').attr('class', 'swiper-slide');
-let div = $('<div></div>').attr('class', 'item__container');
-let img = $('<img></img>').attr('class', 'item__img').attr('src', book.image);
-let info = $('<div></div>').attr('class', 'item__info');
-let name = $('<div></div>').attr('class', 'item__name');
-let author = $('<div></div>').attr('class', 'author__name');
-let btn = $('<div></div>').attr('class', 'item__btn');
-info.html(name, author, btn);
-div.html(img, info);
-swiper.html(div);
-bestseller.prepend(swiperr);
- */
-/* <div class="item__container bestseller">
-                <img
-                  src="./assets/img/image 3.png"
-                  alt="book image"
-                  class="item__img bestseller"
-                />
-                <div class="item__img bestseller">
-                  <div class="item__name bestseller">Order in chaos</div>
-                  <div class="author__name bestseller">konstantin koptelov</div>
-                  <div class="item__btn bestseller">READ MORE</div>
-                </div> 
-                 <div class="item__info bestseller">
-                  <div class="item__name bestseller">Order in chaos</div>
-                  <div class="author__name bestseller">konstantin koptelov</div>
-                  <div class="item__btn bestseller">*/
