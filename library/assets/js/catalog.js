@@ -130,6 +130,7 @@ onValue(ref(db, '/library/book'), async (snap) => {
   console.log(object);
 
   let arr = Object.entries(object);
+  console.log(arr);
   let shortArr = arr.slice(0, 9);
   shortArr.map(function (e) {
     console.log(e[1].name);
@@ -141,13 +142,17 @@ onValue(ref(db, '/library/book'), async (snap) => {
   arr.map(function (e) {
     let year = e[1].year;
     if (year >= 2021) {
-      show(e[1], newRelease);
+      let shortArr2 = [];
+      shortArr2.push(e[1]);
+      shortArr2.slice(0, 9);
+      console.log(shortArr2);
+      shortArr2.map((e) => {
+        show(e, newRelease);
+      });
     }
   });
   console.log(arr);
 });
-
-console.log(bestsellerBooks);
 
 function show(book, assignTo) {
   let swiper = document.createElement('div');
@@ -178,8 +183,13 @@ function show(book, assignTo) {
 
   let btn = document.createElement('div');
   btn.setAttribute('class', 'item__btn');
-  btn.textContent = 'READ MORE';
 
+  let link = document.createElement('a');
+  link.setAttribute('href', '/library/book.html');
+  link.setAttribute('class', 'item__link');
+  link.textContent = 'READ MORE';
+
+  btn.prepend(link);
   info.prepend(name, author, btn);
   div.prepend(img, info);
   swiper.prepend(div);
