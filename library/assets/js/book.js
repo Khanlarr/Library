@@ -68,3 +68,18 @@ join_us_btn.addEventListener("click",(e)=>{
     }
 }
 })
+
+// book js
+
+var year=document.querySelector('#blue p')
+var bookName=document.querySelector('.bookname')
+var date=document.querySelector('.publishdate')
+var authorName=document.querySelector('.authorname')
+
+
+onValue(ref(db, '/library/book'), async (snap) => {
+    let object = (await snap.val()) || {};
+    console.log(object);
+
+
+});
