@@ -10,6 +10,7 @@
   --input-color: #797667;
   --title-color: #333333;
   --background: #fffaf5;
+  --background-active: #f8ebde;
 }
 
 html,
@@ -149,8 +150,16 @@ table {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 5rem;
+  /* height: 5rem; */
+  position: fixed;
+  width: 90%;
+  transition: all .3s linear;
+  z-index: 999;
 }
+.header.active{
+  background: var(--background-active);
+}
+
 
 .header__logo {
   display: flex;
@@ -243,6 +252,7 @@ table {
   height: 100vh;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.2);
+  z-index: 9999;
 }
 
 .modal .join_us {
@@ -318,6 +328,9 @@ table {
 }
 
 @media screen and (max-width: 991px) {
+  .header{
+    padding: 1.5rem 3rem;
+}
   .header__join_us > p {
     display: none;
   }
@@ -381,11 +394,18 @@ table {
     width: 60%;
     font-size: 38px;
   }
+  .head__container {
+    width: 100vw;
+      }
+    .all_books__text{
+      font-size: 22px !important;
+    }
 }
 @media screen and (max-width: 576px) {
   .header {
     padding: 1.5rem;
-  }
+    width: 94%;
+}
 
   .modal .join_us {
     width: 80%;
@@ -396,51 +416,58 @@ table {
     margin-bottom: 0;
   }
 }
+@media screen and (max-width:480px) {
+  .header {
+      width: 90%;
+  }
+}
 /* ------------------------------------------------------- */
+html{
+  overflow-x: hidden;
+}
 body {
   font-family: Montserrat;
   background-color: #fffaf5;
-  padding: 0 15%;
+  overflow-x: hidden;
+}
+.main{
+  padding: 9rem 5rem 0;
 }
 
+.head__container {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 30px;
+  width:60vw;
+}
+.header__links{
+  width: 50vw;
+}
+.header__links_div{
+  display: flex;
+  flex-direction: row;
+}
 .all_books__text {
   font-weight: 900;
   font-size: 25px;
   flex-basis: 20%;
 }
-
-.header__links {
-  display: flex;
-  flex-direction: row;
-}
 .header__link {
-  padding: 0px 10px;
   text-decoration: none;
   color: #241400;
-  font-size: 13px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+.swiper-wrapper{
+  margin-bottom: 1rem;
 }
 
-.head__container {
-  display: flex;
-  margin-bottom: 30px;
-}
-
-.swiper {
+.swiper1 {
   width: 100%;
   height: 100%;
 }
-
-.swiper-slide {
-  padding: 20px;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .item__container {
   display: flex;
   flex-direction: column;
@@ -448,12 +475,11 @@ body {
   text-align: center;
   font-size: 18px;
   background: #fff;
-
   justify-content: center;
   align-items: center;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  height: 18rem;
 }
-
 .item__img {
   width: 135px;
   height: 180px;
@@ -497,6 +523,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  margin-top: 7rem;
 }
 
 .new_release__container {
@@ -505,10 +532,11 @@ body {
   justify-content: center;
   align-items: center;
   margin: 50px 0;
+  margin-top: 7rem;
 }
 
 @media screen and (max-width: 576px) {
-  .head__container {
+  /* .head__container {
     flex-direction: column;
   }
   .header__link {
@@ -519,11 +547,11 @@ body {
   }
   .text__container {
     font-size: 23px;
-  }
+  } */
 }
 
-@media screen and (min-width: 576px) and (max-width: 767) {
-  .head__container {
+@media screen and (max-width: 767px) {
+  /* .head__container {
     flex-direction: column;
   }
   .header__link {
@@ -534,14 +562,34 @@ body {
   }
   .text__container {
     font-size: 23px;
+  } */
+  .head__container {
+    width: 100vw;
+  }
+  .all_books__text{
+    font-size: 18px !important;
+    padding-bottom: 2rem;
+  }
+  .header__link{
+    font-size: 14px !important;
+  }
+  .main{
+    padding:8rem 1.5rem;
+  }
+  .head__container{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100vw;
+  }
+  .header__links{
+   width: 80vw;
+  }
+}
+@media screen and (max-width: 1199px){
+  .head__container {
+width: 80vw;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 99) {
-}
 
-@media screen and (min-width: 992px) and (max-width: 1199) {
-}
-
-@media screen and (min-width: 1200px) {
-}
