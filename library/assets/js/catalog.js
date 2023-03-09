@@ -298,7 +298,7 @@ function show(book, assignTo, query) {
   btn.setAttribute('class', 'item__btn');
 
   let link = document.createElement('a');
-  link.setAttribute('href', `./../../../library/book.html${query}`);
+  link.setAttribute('href', `./../../../../Library/library/book.html${query}`);
   link.setAttribute('class', 'item__link');
   link.textContent = 'READ MORE';
 
