@@ -26,6 +26,13 @@
     <script src="./assets/js/catalog.js" defer type="module"></script>
   </head>
   <body>
+        <!-- Loader -->
+        <div class="loader-wrapper">
+          <div class="loader">
+          </div>
+          <div class="loader-section section-left"></div>
+          <div class="loader-section section-right"></div>
+        </div>
     <!-- Modal -->
     <div class="modal">
       <div class="join_us" id="join_div">
@@ -60,14 +67,17 @@
         <div class="header__join_us">
           <img src="./assets/img/Combined Shape.png" alt="" />
           <p>Join Us</p>
+          <button class="close_button">Log Out</button>
         </div>
         <div class="header__responsive_menu">
+          <button class="close_button_repo">Log out</button>
           <p><i class="fa-solid fa-bars"></i></p>
         </div>
       </div>
     </header>
     <!-- Main -->
     <div class="main">
+  
       <div class="head__container">
         <div class="all_books__text"><h2>All Books</h2></div>
         <div class="swiper mySwiper header__links">
@@ -105,7 +115,7 @@
         <div class="text__container">Bestseller</div>
         <div class="swiper mySwiper mySwiper1 swiper1">
           <div class="swiper-wrapper bestseller">
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="item__container">
                 <img
                   src="./assets/img/image 3.png"
@@ -117,8 +127,8 @@
                   <div class="author__name">konstantin koptelov</div>
                   <div class="item__btn">READ MORE</div>
                 </div>
-              </div>
-            </div>
+              </div> -->
+            <!-- </div> -->
           </div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
@@ -130,7 +140,7 @@
         <div class="text__container">New Release</div>
         <div class="swiper mySwiper mySwiper1 swiper1">
           <div class="swiper-wrapper new_release">
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="item__container">
                 <img
                   src="./assets/img/image 3.png"
@@ -143,7 +153,7 @@
                   <div class="item__btn">READ MORE</div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
@@ -151,5 +161,91 @@
         </div>
       </div> 
     </div>
+         <!-- Social Media -->
+  <div class="social_media">
+    <div class="social_media_title">
+      <h2>Follow us on social media</h2>
+    </div>
+    <div class="social_media_icons">
+      <div><a href="https://www.facebook.com/profile.php?id=100074404984307&mibextid=ZbWKwL"><img
+            src="./assets/img/facebook.png" alt=""></a></div>
+      <div><a href=""><img src="./assets/img/twitter.png" alt=""></a></div>
+      <div><a href="https://www.instagram.com/invites/contact/?i=puwjohhyw2op&utm_content=lzxn6re"><img
+            src="./assets/img/instagram.png" alt=""></a></div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer_content">
+      <div class="footer_logo">
+        <div class="footer__logo__img">
+          <img src="./assets/img/vector-white.png" alt="Vector.png" />
+        </div>
+        <div class="footer__logo__title">
+          <h2>LIBRARY</h2>
+          <p>Book Store</p>
+        </div>
+      </div>
+      <div class="footer-infos">
+        <div class="footer_information">
+          <p class="title">
+            Popular
+          </p>
+          <p>
+            Programming
+          </p>
+          <p>
+            Books for children
+          </p>
+          <p>
+            Psychology
+          </p>
+          <p>
+            Business
+          </p>
+        </div>
+        <div class="footer_information">
+          <p class="title">
+            Information
+          </p>
+          <p>
+            Delivery
+          </p>
+          <p>
+            Payment
+          </p>
+          <p>
+            About the store
+          </p>
+        </div>
+        <div class="footer_information">
+          <p class="title">
+            Help
+          </p>
+          <p>
+            Contacts
+          </p>
+          <p>
+            Purchase returns
+          </p>
+          <p>
+            Buyer help
+          </p>
+        </div>
+      </div>
+      <div class="footer_information contact">
+        <p class="number">+994 51 677-62-62</p>
+        <p class="calling">Request a call</p>
+      </div>
+    </div>
+    <p class="footer_end">
+      All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy
+    </p>
+    <hr class="hr">
+    <div class="end-responsive">
+      <p>Library BookStore EACamp</p>
+      <p> © 2003-2021 </p>
+    </div>
+  </div>
   </body>
 </html>

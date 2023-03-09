@@ -7,11 +7,40 @@ import {
   push,
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js';
 let joinUs_Title = document.querySelector('.header__join_us p');
-if (joinUs_Title.innerHTML) {
-  joinUs_Title.innerHTML =
-    JSON.parse(localStorage.getItem('join'))?.name || 'Join Us';
-}
+let mainCloseBtn = document.querySelector('.close_button')
+let respoCloseBtn = document.querySelector('.close_button_repo')
+function updateSize() {
+    if(window.innerWidth > 991){
+        mainCloseBtn.style.display = 'inline-block'
+        respoCloseBtn.style.display = 'none'
 
+    }
+    else{
+        respoCloseBtn.style.display = 'inline-block'
+        mainCloseBtn.style.display = 'none'
+    }
+    if(!localStorage.getItem('join')){
+        respoCloseBtn.style.display = 'none'
+        mainCloseBtn.style.display = 'none'
+    }
+
+  }
+if(joinUs_Title.innerHTML){
+    joinUs_Title.innerHTML=JSON.parse(localStorage.getItem('join'))?.name || 'Join Us';
+    if(localStorage.getItem('join')){
+        updateSize()
+        mainCloseBtn.addEventListener('click',()=>{
+            document.querySelector('.modal').classList.toggle('active_modal')
+            localStorage.removeItem('join')
+            location.reload()
+        })
+        respoCloseBtn.addEventListener('click',()=>{
+            document.querySelector('.modal').classList.toggle('active_modal')
+            localStorage.removeItem('join')
+            location.reload()
+        })
+    }
+}
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('active_modal')) {
     document.querySelector('.modal').classList.remove('active_modal');
@@ -73,6 +102,7 @@ join_us_btn.addEventListener('click', (e) => {
         joinUs_Title.innerHTML = join.name;
         join = {};
         alert('Success');
+        location.reload()
       } else {
         alert('Zehmet olmasa melumatlari dogru daxil edin');
       }
@@ -115,6 +145,22 @@ const header__links_div = document.querySelector('.header__links_div');
 const all_books__container = document.querySelector(
   '.all_books__container .swiper .swiper-wrapper'
 );
+
+document.querySelector('.all_books__text').addEventListener('click',()=>{
+  let object_arr = [];
+  onValue(ref(db, '/library/book'), async (snap) => {
+    let object = (await snap.val()) || {};
+    all_books__container.innerHTML = '';
+      Object.entries(object)
+  .slice(10, 20)
+  .map((obj) => {
+    if (!object_arr.includes(obj[1])) {
+      object_arr.push(obj[1]);
+      show(obj[1], all_books__container,`?${obj[0]}`);
+    }
+  });
+  });
+})
 onValue(ref(db, '/library/book'), async (snap) => {
   let object = (await snap.val()) || {};
   header__links_div.innerHTML = '';
@@ -122,15 +168,16 @@ onValue(ref(db, '/library/book'), async (snap) => {
   let object_arr = [];
   all_books__container.innerHTML = '';
   Object.entries(object)
-    .slice(4, 14)
+    .slice(10, 20)
     .map((obj) => {
       if (!object_arr.includes(obj[1])) {
         object_arr.push(obj[1]);
-        show(obj[1], all_books__container);
+        show(obj[1], all_books__container,`?${obj[0]}`);
       }
     });
   Object.entries(object).map((obj) => {
-    if (!arr.includes(obj[1]?.type) && obj[1]?.type?.length <= 20) {
+    console.log(obj[1]?.type);
+    if (!arr.includes(obj[1]?.type) && obj[1]?.type?.length <= 15) {
       arr.push(obj[1]?.type);
       let div = document.createElement('div');
       div.classList.add('swiper-slide');
@@ -141,7 +188,7 @@ onValue(ref(db, '/library/book'), async (snap) => {
         all_books__container.innerHTML = '';
         Object.entries(object).map((objim) => {
           if (objim[1]?.type === obj[1]?.type) {
-            show(objim[1], all_books__container);
+            show(objim[1], all_books__container,`?${objim[0]}`);
           }
         });
       });
@@ -182,11 +229,6 @@ const swiper = new Swiper('.mySwiper1', {
   },
 });
 
-onValue(ref(db, '/library'), async (snap) => {
-  let object = (await snap.val()) || {};
-  console.log(object);
-});
-
 let query = '';
 let query2 = '';
 
@@ -208,7 +250,7 @@ onValue(ref(db, '/library/book'), async (snap) => {
 
   arr.map(function (e) {
     let year = e[1].year;
-    if (year >= 2021) {
+    if (year >= 2018) {
       let shortArr2 = [];
       shortArr2.push(e[1]);
       query2 = `?+${e[0]}`;
@@ -271,4 +313,10 @@ window.addEventListener('scroll', () => {
   document
     .querySelector('.header')
     .classList.toggle('active', window.scrollY > 0);
+});
+updateSize()
+window.addEventListener("resize", updateSize);
+
+window.addEventListener('load',function(){
+  document.querySelector('body').classList.add("loaded")  
 });

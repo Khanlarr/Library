@@ -36,8 +36,40 @@ btn.addEventListener("click",(e)=>{
 
 
 let joinUs_Title=document.querySelector('.header__join_us p')
-if(joinUs_Title.innerHTML){joinUs_Title.innerHTML=JSON.parse(localStorage.getItem('join'))?.name || 'Join Us';}
+let mainCloseBtn = document.querySelector('.close_button')
+let respoCloseBtn = document.querySelector('.close_button_repo')
+function updateSize() {
+    if(window.innerWidth > 991){
+        mainCloseBtn.style.display = 'inline-block'
+        respoCloseBtn.style.display = 'none'
 
+    }
+    else{
+        respoCloseBtn.style.display = 'inline-block'
+        mainCloseBtn.style.display = 'none'
+    }
+    if(!localStorage.getItem('join')){
+        respoCloseBtn.style.display = 'none'
+        mainCloseBtn.style.display = 'none'
+    }
+
+  }
+if(joinUs_Title.innerHTML){
+    joinUs_Title.innerHTML=JSON.parse(localStorage.getItem('join'))?.name || 'Join Us';
+    if(localStorage.getItem('join')){
+        updateSize()
+        mainCloseBtn.addEventListener('click',()=>{
+            document.querySelector('.modal').classList.toggle('active_modal')
+            localStorage.removeItem('join')
+            location.reload()
+        })
+        respoCloseBtn.addEventListener('click',()=>{
+            document.querySelector('.modal').classList.toggle('active_modal')
+            localStorage.removeItem('join')
+            location.reload()
+        })
+    }
+}
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('active_modal')) {
         document.querySelector('.modal').classList.remove('active_modal')
@@ -94,6 +126,7 @@ join_us_btn.addEventListener("click",(e)=>{
         joinUs_Title.innerHTML=join.name
          join={};
         alert("Success")
+        location.reload()
     }
     else{
         alert("Zehmet olmasa melumatlari dogru daxil edin")
@@ -107,3 +140,10 @@ join_us_btn.addEventListener("click",(e)=>{
 window.addEventListener('scroll',()=>{
     document.querySelector('.header').classList.toggle('active',window.scrollY>0);
 })
+updateSize()
+window.addEventListener("resize", updateSize);
+
+window.addEventListener('load',function(){
+    document.querySelector('body').classList.add("loaded")  
+  });
+  
