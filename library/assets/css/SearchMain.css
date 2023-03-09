@@ -20,8 +20,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
-
+.read_more{
+  text-decoration: none;
+  color: #1b50e4;
+  font-weight: 700;
+}
 .swiper-slide img {
   display: block;
   width: 100%;
@@ -30,12 +35,12 @@ body {
 }
 
 .contain {
-  padding: 5rem;
+  padding: 8rem 5rem;
 }
 .contain h2 {
   font-family: "Montserrat";
   font-style: normal;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 36px;
   line-height: 196.19%;
   display: flex;
@@ -294,6 +299,10 @@ body {
   } 
 }
 @media screen and (max-width: 576px) {
+  .contain {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
   .social_media_title {
     font-size: 20px;
   }
@@ -313,11 +322,11 @@ body {
 }
 @media screen and (max-width: 1200px) {
   .contain {
-    padding: 0px;
+    /* padding: 0px; */
   }
   .contain h2 {
     display: block;
-    text-align: center;
+    /* text-align: center; */
     margin-bottom: 25px;
   }
   .contain .main {

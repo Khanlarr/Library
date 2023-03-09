@@ -131,7 +131,7 @@ const showValues=(object)=>{
         rightSlide.append(author)
         let info = document.createElement('p')
         info.classList = 'info'
-        info.innerHTML = item[1].description.slice(0,650) + '....'
+        info.innerHTML = item[1].description.slice(0,450) + `....<a class='read_more' href='/library/book.html?${item?.[0]}'>Read More</a>`
         rightSlide.append(info)
         }
         
@@ -150,3 +150,8 @@ window.addEventListener('scroll',()=>{
 })
 updateSize()
 window.addEventListener("resize", updateSize);
+
+window.addEventListener('load',function(){
+    document.querySelector('body').classList.add("loaded")  
+  });
+  
