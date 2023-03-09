@@ -71,15 +71,38 @@ join_us_btn.addEventListener("click",(e)=>{
 
 // book js
 
+var image=document.querySelector('#mid_img img')
 var year=document.querySelector('#blue p')
 var bookName=document.querySelector('.bookname')
 var date=document.querySelector('.publishdate')
 var authorName=document.querySelector('.authorname')
+var description=document.querySelector('#kiev p')
 
 
 onValue(ref(db, '/library/book'), async (snap) => {
     let object = (await snap.val()) || {};
     console.log(object);
 
+    var link=window.location.href;
+    var obj_link=link.substring(link.length-20,link.length);
 
+    console.log(obj_link);
+
+    Object.entries(object).map((e)=>{
+        let img=e[1].image
+        let book_year=e[1].year
+        let book_name=e[1].name
+        let a_name=e[1].authorName
+        let desc=e[1].description
+      
+        if(e[0]==obj_link){
+        console.log(e[1]);
+        image.setAttribute('src',img);
+        year.innerHTML=book_year;
+        bookName.innerHTML=book_name;
+        authorName.innerHTML=a_name;
+        description.innerHTML=desc;   
+
+      }
+    })
 });
