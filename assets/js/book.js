@@ -147,3 +147,52 @@ window.addEventListener('load',function(){
     document.querySelector('body').classList.add("loaded")  
   });
   
+let comment__input=document.querySelector('.comment__form input')
+let comment__button=document.querySelector('.comment__form button')
+
+comment__button.addEventListener('click',(e)=>{
+    let comments={
+        name:"anonim",
+        hour:new Date().getHours(),
+        minute:new Date().getMinutes(),
+        comment:comment__input.value
+    }
+    if(localStorage.getItem('join')){  
+        let key_push=push(ref(db,'/library/comment')).key;
+        comments.name=JSON.parse(localStorage.getItem('join'))?.name;
+        set(ref(db,`/library/comment/${key_push}`),comments)
+    }
+    else{
+        let key_push=push(ref(db,'/library/comment')).key;
+        set(ref(db,`/library/comment/${key_push}`),comments)
+    }
+    comment__input.value='';
+    alert('success')
+e.preventDefault();
+})
+let comment_div=document.querySelector('.comment_d');
+const getComment=async()=>{
+    const object=await get(ref(db,`/library/comment`));
+    const obj=await object.val()
+    comment_div.innerHTML=``
+    Object.entries(obj).slice(-5).map(objj=>{
+        let comment__item=document.createElement('div');
+        comment__item.classList.add('comment__item');
+        let comment__title=document.createElement('div');
+        comment__title.classList.add('comment__title');
+        let h3=document.createElement('h3');
+        h3.innerHTML=objj[1]?.name;
+        let p_date=document.createElement('p');
+        p_date.innerHTML=`${objj[1]?.hour}:${objj[1]?.minute}`
+        comment__title.append(h3,p_date);
+        let comment__description=document.createElement('div');
+        comment__description.classList.add('comment__description');
+        let desc_p=document.createElement('p');
+        desc_p.innerHTML=objj[1]?.comment;
+        comment__description.append(desc_p);
+        comment__item.append(comment__title,comment__description)
+        comment_div.prepend(comment__item)
+    })
+}
+
+getComment();

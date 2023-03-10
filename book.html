@@ -1,182 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book</title>
     <!-- Css -->
-    <link rel="stylesheet" href="./assets/css/book.css">
+    <link rel="stylesheet" href="./assets/css/book.css" />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-</head>
-<body>
-  <!-- Loader -->
-  <div class="loader-wrapper">
-    <div class="loader">
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Loader -->
+    <div class="loader-wrapper">
+      <div class="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
     </div>
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-  </div>
-   <!-- Modal -->
-   <div class="modal">
-    <div class="join_us" id="join_div">
-      <h2>Join Us</h2>
-      <input type="text" class="name" placeholder="Full name" id="name"/>
-      <input type="text" class="email" placeholder="Email" id="email"/>
-      <button class="join_btn">Join</button>
-    </div>
-  </div>
-  <!-- Header -->
-  <header class="header">
-    <div class="header__logo">
-      <div class="header__logo__img">
-        <img src="./assets/img/book.png" alt="Vector.png" />
-      </div>
-      <div class="header__logo__title">
-        <h2>LIBRARY</h2>
-        <p>Book Store</p>
+    <!-- Modal -->
+    <div class="modal">
+      <div class="join_us" id="join_div">
+        <h2>Join Us</h2>
+        <input type="text" class="name" placeholder="Full name" id="name" />
+        <input type="text" class="email" placeholder="Email" id="email" />
+        <button class="join_btn">Join</button>
       </div>
     </div>
-    <div class="header__list">
-    <ul>
-      <li><a href="./index.html">Home</a></li>
-      <li><a href="./catalog.html">Catalog</a></li>
-      <li><a href="./aboutStore.html">About Store</a></li>
-      <li><a href="./contactUs.html">Contact Us</a></li>
-      <li><a href="./search.html">Search</a></li>
-    </ul>
-    <div><img src="./assets/img/remove.png" alt=""></div>
-  </div>
-    <div class="user_bar">
-      <div class="header__join_us">
-        <img src="./assets/img/Combined Shape.png" alt="" />
-        <p>Join Us</p>
-        <button class="close_button">Log Out</button>
-      </div>
-      <div class="header__responsive_menu">
-        <button class="close_button_repo">Log out</button>
-        <p><i class="fa-solid fa-bars"></i></p>
-      </div>
-    </div>
-  </header>
-    <!-- Main -->
-    <div id="umumi">
-        <button id="back_btn"> <a id="back_btn_text">&lt BACK</a> </button>
-    
-        
-        <div id="mid_div">
-            
-            <div id="mid_left">
-              <div id="blue"><p></p></div>
-                <p style="font-size: 35px; font-weight: 700;" class="bookname"></p>
-                <p style="font-size: 16px; font-weight: 700;" class="publishdate"></p>
-                <p style="font-size: 22px;" class="authorname"></p>
-                <div id="kiev">
-                    <p></p>
-                </div>
-            </div>
-            <div id="mid_img">
-                <img>
-            </div> 
+    <!-- Header -->
+    <header class="header">
+      <div class="header__logo">
+        <div class="header__logo__img">
+          <img src="./assets/img/book.png" alt="Vector.png" />
         </div>
-    
-    </div>    
-    
-    
-            <!-- Social Media -->
-  <div class="social_media">
-    <div class="social_media_title">
-      <h2>Follow us on social media</h2>
-    </div>
-    <div class="social_media_icons">
-      <div><a href="https://www.facebook.com/profile.php?id=100074404984307&mibextid=ZbWKwL"><img
-            src="./assets/img/facebook.png" alt=""></a></div>
-      <div><a href=""><img src="./assets/img/twitter.png" alt=""></a></div>
-      <div><a href="https://www.instagram.com/invites/contact/?i=puwjohhyw2op&utm_content=lzxn6re"><img
-            src="./assets/img/instagram.png" alt=""></a></div>
-    </div>
-  </div>
-  <!-- Footer -->
-  <div class="footer">
-    <div class="footer_content">
-      <div class="footer_logo">
-        <div class="footer__logo__img">
-          <img src="./assets/img/vector-white.png" alt="Vector.png" />
-        </div>
-        <div class="footer__logo__title">
+        <div class="header__logo__title">
           <h2>LIBRARY</h2>
           <p>Book Store</p>
         </div>
       </div>
-      <div class="footer-infos">
-        <div class="footer_information">
-          <p class="title">
-            Popular
-          </p>
-          <p>
-            Programming
-          </p>
-          <p>
-            Books for children
-          </p>
-          <p>
-            Psychology
-          </p>
-          <p>
-            Business
-          </p>
+      <div class="header__list">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./catalog.html">Catalog</a></li>
+          <li><a href="./aboutStore.html">About Store</a></li>
+          <li><a href="./contactUs.html">Contact Us</a></li>
+          <li><a href="./search.html">Search</a></li>
+        </ul>
+        <div><img src="./assets/img/remove.png" alt="" /></div>
+      </div>
+      <div class="user_bar">
+        <div class="header__join_us">
+          <img src="./assets/img/Combined Shape.png" alt="" />
+          <p>Join Us</p>
+          <button class="close_button">Log Out</button>
         </div>
-        <div class="footer_information">
-          <p class="title">
-            Information
-          </p>
-          <p>
-            Delivery
-          </p>
-          <p>
-            Payment
-          </p>
-          <p>
-            About the store
-          </p>
-        </div>
-        <div class="footer_information">
-          <p class="title">
-            Help
-          </p>
-          <p>
-            Contacts
-          </p>
-          <p>
-            Purchase returns
-          </p>
-          <p>
-            Buyer help
-          </p>
+        <div class="header__responsive_menu">
+          <button class="close_button_repo">Log out</button>
+          <p><i class="fa-solid fa-bars"></i></p>
         </div>
       </div>
-      <div class="footer_information contact">
-        <p class="number">+994 51 677-62-62</p>
-        <p class="calling">Request a call</p>
+    </header>
+    <!-- Main -->
+    <div id="umumi">
+      <button id="back_btn"><a id="back_btn_text">&lt BACK</a></button>
+
+      <div id="mid_div">
+        <div id="mid_left">
+          <div id="blue"><p></p></div>
+          <p style="font-size: 35px; font-weight: 700" class="bookname"></p>
+          <p style="font-size: 16px; font-weight: 700" class="publishdate"></p>
+          <p style="font-size: 22px" class="authorname"></p>
+          <div id="kiev">
+            <p></p>
+          </div>
+        </div>
+        <div id="mid_img">
+          <img />
+        </div>
       </div>
     </div>
-    <p class="footer_end">
-      All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy
-    </p>
-    <hr class="hr">
-    <div class="end-responsive">
-      <p>Library BookStore EACamp</p>
-      <p> © 2003-2021 </p>
+
+    <div class="comment">
+      <div class="comment__form">
+        <input type="text" placeholder="your anonim comment..." />
+        <button><img src="./assets/img/Vector.png" alt="" /></button>
+      </div>
+      <div class="comment_d">
+
+      </div>
     </div>
-  </div>
-    
+
+    <!-- Social Media -->
+    <div class="social_media">
+      <div class="social_media_title">
+        <h2>Follow us on social media</h2>
+      </div>
+      <div class="social_media_icons">
+        <div>
+          <a
+            href="https://www.facebook.com/profile.php?id=100074404984307&mibextid=ZbWKwL"
+            ><img src="./assets/img/facebook.png" alt=""
+          /></a>
+        </div>
+        <div>
+          <a href=""><img src="./assets/img/twitter.png" alt="" /></a>
+        </div>
+        <div>
+          <a
+            href="https://www.instagram.com/invites/contact/?i=puwjohhyw2op&utm_content=lzxn6re"
+            ><img src="./assets/img/instagram.png" alt=""
+          /></a>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer_content">
+        <div class="footer_logo">
+          <div class="footer__logo__img">
+            <img src="./assets/img/vector-white.png" alt="Vector.png" />
+          </div>
+          <div class="footer__logo__title">
+            <h2>LIBRARY</h2>
+            <p>Book Store</p>
+          </div>
+        </div>
+        <div class="footer-infos">
+          <div class="footer_information">
+            <p class="title">Popular</p>
+            <p>Programming</p>
+            <p>Books for children</p>
+            <p>Psychology</p>
+            <p>Business</p>
+          </div>
+          <div class="footer_information">
+            <p class="title">Information</p>
+            <p>Delivery</p>
+            <p>Payment</p>
+            <p>About the store</p>
+          </div>
+          <div class="footer_information">
+            <p class="title">Help</p>
+            <p>Contacts</p>
+            <p>Purchase returns</p>
+            <p>Buyer help</p>
+          </div>
+        </div>
+        <div class="footer_information contact">
+          <p class="number">+994 51 677-62-62</p>
+          <p class="calling">Request a call</p>
+        </div>
+      </div>
+      <p class="footer_end">
+        All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy
+      </p>
+      <hr class="hr" />
+      <div class="end-responsive">
+        <p>Library BookStore EACamp</p>
+        <p>© 2003-2021</p>
+      </div>
+    </div>
+
     <!-- Js -->
     <script src="./assets/js/book.js" type="module"></script>
-</body>
+  </body>
 </html>
