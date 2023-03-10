@@ -86,7 +86,6 @@ if (localStorage.getItem("user")) {
       `https://www.googleapis.com/books/v1/volumes?q=${api_search.value}`
     );
     const data = await api.json();
-    console.log(data);
     search_result.innerHTML = "";
     data?.items?.map((dt) => {
       let div = document.createElement("div");
