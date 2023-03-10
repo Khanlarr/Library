@@ -64,7 +64,6 @@ document.querySelector('.header__list>div').addEventListener('click', () => {
 document.querySelectorAll('.header__list ul li a').forEach((e) => {
   var t = e.innerHTML.toLowerCase().split(' ');
   var s = '';
-  console.log(t);
   if (t.length > 0) {
     while (t.length > 0) {
       if (t[0] === 'home') {
@@ -76,7 +75,7 @@ document.querySelectorAll('.header__list ul li a').forEach((e) => {
     }
   }
   if (
-    s === window.location.pathname.split('/')[2].split('.')[0].toLowerCase()
+    s === window.location.pathname.split('/')[1].split('.')[0].toLowerCase()
   ) {
     e.classList.add('active');
   }
@@ -141,7 +140,7 @@ var swiper1 = new Swiper('.header__links', {
     },
   },
 });
-const header__links_div = document.querySelector('.header__links_div');
+const header__links_div = document.querySelector('.head__container .swiper .header__links_div');
 const all_books__container = document.querySelector(
   '.all_books__container .swiper .swiper-wrapper'
 );
@@ -161,12 +160,13 @@ document.querySelector('.all_books__text').addEventListener('click',()=>{
   });
   });
 })
+
 onValue(ref(db, '/library/book'), async (snap) => {
   let object = (await snap.val()) || {};
-  header__links_div.innerHTML = '';
   let arr = [];
   let object_arr = [];
   all_books__container.innerHTML = '';
+  header__links_div.innerHTML=''
   Object.entries(object)
     .slice(10, 20)
     .map((obj) => {
@@ -176,7 +176,6 @@ onValue(ref(db, '/library/book'), async (snap) => {
       }
     });
   Object.entries(object).map((obj) => {
-    console.log(obj[1]?.type);
     if (!arr.includes(obj[1]?.type) && obj[1]?.type?.length <= 15) {
       arr.push(obj[1]?.type);
       let div = document.createElement('div');
@@ -237,10 +236,8 @@ const newRelease = document.querySelector('.new_release');
 
 onValue(ref(db, '/library/book'), async (snap) => {
   let object = (await snap.val()) || {};
-  console.log(object);
 
   let arr = Object.entries(object);
-  console.log(arr);
   let shortArr = arr.slice(0, 9);
   shortArr.map(function (e) {
     query = `?${e[0]}`;
@@ -254,17 +251,13 @@ onValue(ref(db, '/library/book'), async (snap) => {
       let shortArr2 = [];
       shortArr2.push(e[1]);
       query2 = `?+${e[0]}`;
-      console.log(query2);
       shortArr2.slice(0, 9);
-      console.log(shortArr2);
       shortArr2.map((e) => {
-        console.log(e);
 
         show(e, newRelease, query2);
       });
     }
   });
-  console.log(arr);
 });
 
 function show(book, assignTo, query) {
@@ -298,7 +291,7 @@ function show(book, assignTo, query) {
   btn.setAttribute('class', 'item__btn');
 
   let link = document.createElement('a');
-  link.setAttribute('href', `/library/book.html${query}`);
+  link.setAttribute('href', `./book.html${query}`);
   link.setAttribute('class', 'item__link');
   link.textContent = 'READ MORE';
 

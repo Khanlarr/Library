@@ -21,7 +21,7 @@ btn.addEventListener("click", async(e) => {
   data=data.val();
   if(data.username===user.value && data.password===parseInt(pass.value)){
   localStorage.setItem("user", data.username);   // Locala yazdirma
-   window.location.assign('./../../../admin/panel.html');
+   window.location.assign('./../../panel.html');
   }
   else{
     alert("user və ya parol duzgun daxil edilməyib");

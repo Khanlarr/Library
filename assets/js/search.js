@@ -35,6 +35,7 @@ if(joinUs_Title.innerHTML){
         })
     }
 }
+
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('active_modal')) {
         document.querySelector('.modal').classList.remove('active_modal')
@@ -65,7 +66,7 @@ document.querySelectorAll('.header__list ul li a').forEach((e)=>{
         t.shift();
     }
     }
-    if(s===window.location.pathname.split('/')[2].split('.')[0].toLowerCase()){
+    if(s===window.location.pathname.split('/')[1].split('.')[0].toLowerCase()){
         e.classList.add('active')
     }
 })
@@ -100,22 +101,47 @@ join_us_btn.addEventListener("click",(e)=>{
     }
 }
 })
-
-const catalog__container=document.querySelector('.catalog__container');
-
-onValue(ref(db, "/library/catalog/categories"), async (snap) => {
-    var object = (await snap.val()) || {};
-    catalog__container.innerHTML='';
-    object?.map(obj=>{
-    let div=document.createElement('div');
-    div.classList.add('catalog__item');
-    let a=document.createElement('a');
-    a.innerHTML=obj;
-    div.append(a);
-    catalog__container.append(div)
+let search_input=document.querySelector('.search_input');
+const showValues=(object)=>{
+    let swiper =document.querySelector('.swiper-wrapper')
+    swiper.innerHTML = "";
+    Object.entries(object)?.map(item=>{
+        if(item?.[1]?.name.toLowerCase().includes(search_input.value.trim().toLowerCase())){
+         let slide = document.createElement('div')
+        slide.classList = 'swiper-slide'
+        swiper.append(slide)
+        let leftSlide = document.createElement('div')
+        leftSlide.classList = 'left'
+        slide.append(leftSlide)
+        let imgSlide = document.createElement('img')
+        imgSlide.src = item[1].image
+        leftSlide.append(imgSlide)
+        let rightSlide = document.createElement('div')
+        rightSlide.classList = 'right'
+        slide.append(rightSlide)
+        let title = document.createElement('h3')
+        title.classList = 'title'
+        title.innerHTML = item[1].name
+        rightSlide.append(title)
+        let author = document.createElement('p')
+        author.classList = 'author'
+        author.innerHTML = item[1].authorName
+        rightSlide.append(author)
+        let info = document.createElement('p')
+        info.classList = 'info'
+        info.innerHTML = item[1].description.slice(0,450) + `....<a class='read_more' href='./book.html?${item?.[0]}'>Read More</a>`
+        rightSlide.append(info)
+        }
+        
     })
-  });
-
+}
+document.querySelector('.search_book').addEventListener('click',(e)=>{
+    onValue(ref(db, "/library/book"), async (snap) => {
+        var object = (await snap.val()) || {};
+        showValues(object);
+      });
+      e.preventDefault();
+})
 
 window.addEventListener('scroll',()=>{
     document.querySelector('.header').classList.toggle('active',window.scrollY>0);
