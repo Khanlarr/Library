@@ -75,7 +75,6 @@ document.querySelectorAll(".header__list ul li a").forEach((e) => {
       t.shift();
     }
   }
-  console.log(window.location.pathname.split("/")[2].split(".")[0].toLowerCase(),s);
   if (
     s === window.location.pathname.split("/")[2].split(".")[0].toLowerCase()
   ) {
