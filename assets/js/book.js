@@ -65,7 +65,7 @@ document.querySelectorAll('.header__list ul li a').forEach((e)=>{
         t.shift();
     }
     }
-    if(s===window.location.pathname.split('/')[2].split('.')[0].toLowerCase()){
+    if(s===window.location.pathname.split('/')[1].split('.')[0].toLowerCase()){
         e.classList.add('active')
     }
 })
@@ -101,25 +101,45 @@ join_us_btn.addEventListener("click",(e)=>{
 }
 })
 
-const catalog__container=document.querySelector('.catalog__container');
+// book js
 
-onValue(ref(db, "/library/catalog/categories"), async (snap) => {
-    var object = (await snap.val()) || {};
-    catalog__container.innerHTML='';
-    object?.map(obj=>{
-    let div=document.createElement('div');
-    div.classList.add('catalog__item');
-    let a=document.createElement('a');
-    a.innerHTML=obj;
-    div.append(a);
-    catalog__container.append(div)
+var image=document.querySelector('#mid_img img')
+var year=document.querySelector('#blue p')
+var bookName=document.querySelector('.bookname')
+var date=document.querySelector('.publishdate')
+var authorName=document.querySelector('.authorname')
+var description=document.querySelector('#kiev p')
+
+
+onValue(ref(db, '/library/book'), async (snap) => {
+    let object = (await snap.val()) || {};
+
+    var link=window.location.href;
+    var obj_link=link.substring(link.length-20,link.length);
+
+    Object.entries(object).map((e)=>{
+        let img=e[1].image
+        let book_year=e[1].year
+        let book_name=e[1].name
+        let a_name=e[1].authorName
+        let desc=e[1].description
+      
+        if(e[0]==obj_link){
+        image.setAttribute('src',img);
+        year.innerHTML=book_year;
+        bookName.innerHTML=book_name;
+        authorName.innerHTML=a_name;
+        description.innerHTML=desc;   
+
+      }
     })
-  });
-
+});
 
 window.addEventListener('scroll',()=>{
     document.querySelector('.header').classList.toggle('active',window.scrollY>0);
 })
+
+document.querySelector('#back_btn').addEventListener('click',()=>{history.go(-1);})
 updateSize()
 window.addEventListener("resize", updateSize);
 
