@@ -1,7 +1,7 @@
 import { db } from "./connection.js";
 import { get,set,ref,onValue,push } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
 if(localStorage.getItem('user')){
-  window.location.assign('./../../admin/panel.html');
+  window.location.assign('/admin/panel.html');
 }
 const btn = document.querySelector(".login__form button");
 const user = document.querySelector(".login__form #user");
@@ -21,7 +21,7 @@ btn.addEventListener("click", async(e) => {
   data=data.val();
   if(data.username===user.value && data.password===parseInt(pass.value)){
   localStorage.setItem("user", data.username);   // Locala yazdirma
-   window.location.assign('./../../admin/panel.html');
+   window.location.assign('/admin/panel.html');
   }
   else{
     alert("user və ya parol duzgun daxil edilməyib");
