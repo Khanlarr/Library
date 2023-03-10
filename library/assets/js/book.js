@@ -56,7 +56,6 @@ document.querySelector('.header__list>div').addEventListener('click',()=>{
 document.querySelectorAll('.header__list ul li a').forEach((e)=>{
     var t=e.innerHTML.toLowerCase().split(' ')
     var s='';
-    console.log(t);
     if(t.length>0){
     while(t.length>0){
         if(t[0]==='home'){s=s+'index';}
@@ -114,12 +113,9 @@ var description=document.querySelector('#kiev p')
 
 onValue(ref(db, '/library/book'), async (snap) => {
     let object = (await snap.val()) || {};
-    console.log(object);
 
     var link=window.location.href;
     var obj_link=link.substring(link.length-20,link.length);
-
-    console.log(obj_link);
 
     Object.entries(object).map((e)=>{
         let img=e[1].image
@@ -129,7 +125,6 @@ onValue(ref(db, '/library/book'), async (snap) => {
         let desc=e[1].description
       
         if(e[0]==obj_link){
-        console.log(e[1]);
         image.setAttribute('src',img);
         year.innerHTML=book_year;
         bookName.innerHTML=book_name;

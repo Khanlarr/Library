@@ -57,7 +57,6 @@ document.querySelector('.header__list>div').addEventListener('click',()=>{
 document.querySelectorAll('.header__list ul li a').forEach((e)=>{
     var t=e.innerHTML.toLowerCase().split(' ')
     var s='';
-    console.log(t);
     if(t.length>0){
     while(t.length>0){
         if(t[0]==='home'){s=s+'index';}
@@ -108,7 +107,6 @@ const showValues=(object)=>{
     swiper.innerHTML = "";
     Object.entries(object)?.map(item=>{
         if(item?.[1]?.name.toLowerCase().includes(search_input.value.trim().toLowerCase())){
-            console.log(item?.[1]?.name);
          let slide = document.createElement('div')
         slide.classList = 'swiper-slide'
         swiper.append(slide)
@@ -131,7 +129,7 @@ const showValues=(object)=>{
         rightSlide.append(author)
         let info = document.createElement('p')
         info.classList = 'info'
-        info.innerHTML = item[1].description.slice(0,450) + `....<a class='read_more' href='./../../../../Library/library/book.html?${item?.[0]}'>Read More</a>`
+        info.innerHTML = item[1].description.slice(0,450) + `....<a class='read_more' href='./../../../library/book.html?${item?.[0]}'>Read More</a>`
         rightSlide.append(info)
         }
         

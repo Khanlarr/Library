@@ -675,6 +675,9 @@ table {
     .hr{
       display: block;
     }
+    .item__btn {
+      width: 11rem;
+    }
 }
 @media screen and (max-width: 576px) {
   .header {
@@ -757,7 +760,7 @@ body {
   text-align: center;
   font-size: 18px;
   background: #fff;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
   height: 18rem;
@@ -771,7 +774,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: space-between;
+  align-items: center;
 }
 
 .item__name {
@@ -786,7 +789,12 @@ body {
 }
 
 .item__btn {
-  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 5px; */
+  width: 12rem;
+  height: 2rem;
   background-color: #e16a00;
 }
 
@@ -822,34 +830,7 @@ body {
   margin-top: 7rem;
 }
 
-@media screen and (max-width: 576px) {
-  /* .head__container {
-    flex-direction: column;
-  }
-  .header__link {
-    font-size: 10px;
-  }
-  .all_books__text {
-    font-size: 23px;
-  }
-  .text__container {
-    font-size: 23px;
-  } */
-}
-
 @media screen and (max-width: 767px) {
-  /* .head__container {
-    flex-direction: column;
-  }
-  .header__link {
-    font-size: 10px;
-  }
-  .all_books__text {
-    font-size: 23px;
-  }
-  .text__container {
-    font-size: 23px;
-  } */
   .head__container {
     width: 100vw;
   }
@@ -877,9 +858,18 @@ body {
   .head__container {
 width: 80vw;
   }
+  .item__btn {
+    width: 10rem;
+  }
+}
+.loadingg{
+  font-weight: 800;
+  font-size: 20px;
+  color: #333333;
+  padding-top: 2rem;
 }
 
-/* Loader Styles start here */
+
 .loader-wrapper {
   --line-width: 5px;
   --curtain-color: #f1faee;
