@@ -54,6 +54,7 @@ document.querySelector('.header__list>div').addEventListener('click',()=>{
 })
 
 document.querySelectorAll('.header__list ul li a').forEach((e)=>{
+    console.log(e.innerHTML);
     var t=e.innerHTML.toLowerCase().split(' ')
     var s='';
     if(t.length>0){
