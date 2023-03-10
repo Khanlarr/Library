@@ -76,7 +76,7 @@ document.querySelectorAll(".header__list ul li a").forEach((e) => {
     }
   }
   if (
-    s === window.location.pathname.split("/")[2].split(".")[0].toLowerCase()
+    s === window.location.pathname.split("/")[1].split(".")[0].toLowerCase()
   ) {
     e.classList.add("active");
   }

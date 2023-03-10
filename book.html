@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Search</title>
-  <!-- Css -->
-  <link rel="stylesheet" href="./assets/css/search.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <!-- Css -->
+    <link rel="stylesheet" href="./assets/css/book.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="assets/css/SearchMain.css">
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
-
 <body>
   <!-- Loader -->
   <div class="loader-wrapper">
@@ -23,12 +23,12 @@
     <div class="loader-section section-left"></div>
     <div class="loader-section section-right"></div>
   </div>
-  <!-- Modal -->
-  <div class="modal">
+   <!-- Modal -->
+   <div class="modal">
     <div class="join_us" id="join_div">
       <h2>Join Us</h2>
-      <input type="text" class="name" placeholder="Full name" id="name" />
-      <input type="text" class="email" placeholder="Email" id="email" />
+      <input type="text" class="name" placeholder="Full name" id="name"/>
+      <input type="text" class="email" placeholder="Email" id="email"/>
       <button class="join_btn">Join</button>
     </div>
   </div>
@@ -44,15 +44,15 @@
       </div>
     </div>
     <div class="header__list">
-      <ul>
-        <li><a href="./../library/index.html">Home</a></li>
-        <li><a href="./../library/catalog.html">Catalog</a></li>
-        <li><a href="./../library/aboutStore.html">About Store</a></li>
-        <li><a href="./../library/contactUs.html">Contact Us</a></li>
-        <li><a href="./../library/search.html">Search</a></li>
-      </ul>
-      <div><img src="./assets/img/remove.png" alt=""></div>
-    </div>
+    <ul>
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./catalog.html">Catalog</a></li>
+      <li><a href="./aboutStore.html">About Store</a></li>
+      <li><a href="./contactUs.html">Contact Us</a></li>
+      <li><a href="./search.html">Search</a></li>
+    </ul>
+    <div><img src="./assets/img/remove.png" alt=""></div>
+  </div>
     <div class="user_bar">
       <div class="header__join_us">
         <img src="./assets/img/Combined Shape.png" alt="" />
@@ -65,41 +65,31 @@
       </div>
     </div>
   </header>
-  <!-- Main -->
-  <div class="contain">
-    <h2>Search</h2>
-    <div class="main">
-      <div class="left">
-        <input class="search_input" type="text" placeholder="Search..">
-        <button class="search_book">Search</button>
-      </div>
-      <div class="right">
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="left">
-                <img src="assets/img/bookSearch.png" alt="Book img">
-              </div>
-              <div class="right">
-                <h3 class="title">Order in Chaos</h3>
-                <p class="author">Konstantin Koptelov</p>
-                <p class="info">We work without holidays and weekends! Residents of Kiev can receive an order on the day
-                  of its registration. Customers from other cities of Ukraine can receive an order within 1-5 days,
-                  depending on the location of the settlement and the selected delivery method. Orders over UAH 1000 are
-                  delivered free of charge *. You can see the available methods, exact terms and cost of delivery during
-                  checkout in the order basket, after selecting the delivery city </p>
-              </div>
-              <!-- <div class="read_more">
-                <a href="">Read More</a>
-              </div> -->
+    <!-- Main -->
+    <div id="umumi">
+        <button id="back_btn"> <a id="back_btn_text">&lt BACK</a> </button>
+    
+        
+        <div id="mid_div">
+            
+            <div id="mid_left">
+              <div id="blue"><p></p></div>
+                <p style="font-size: 35px; font-weight: 700;" class="bookname"></p>
+                <p style="font-size: 16px; font-weight: 700;" class="publishdate"></p>
+                <p style="font-size: 22px;" class="authorname"></p>
+                <div id="kiev">
+                    <p></p>
+                </div>
             </div>
-          </div>
-          <div class="swiper-pagination"></div>
+            <div id="mid_img">
+                <img>
+            </div> 
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- Social Media -->
+    
+    </div>    
+    
+    
+            <!-- Social Media -->
   <div class="social_media">
     <div class="social_media_title">
       <h2>Follow us on social media</h2>
@@ -185,18 +175,8 @@
       <p> © 2003-2021 </p>
     </div>
   </div>
-  <!-- Js -->
-  <script src="./assets/js/search.js" type="module"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
+    
+    <!-- Js -->
+    <script src="./assets/js/book.js" type="module"></script>
 </body>
-
 </html>

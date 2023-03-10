@@ -75,7 +75,7 @@ document.querySelectorAll('.header__list ul li a').forEach((e) => {
     }
   }
   if (
-    s === window.location.pathname.split('/')[2].split('.')[0].toLowerCase()
+    s === window.location.pathname.split('/')[1].split('.')[0].toLowerCase()
   ) {
     e.classList.add('active');
   }
@@ -291,7 +291,7 @@ function show(book, assignTo, query) {
   btn.setAttribute('class', 'item__btn');
 
   let link = document.createElement('a');
-  link.setAttribute('href', `./../../../library/book.html${query}`);
+  link.setAttribute('href', `./book.html${query}`);
   link.setAttribute('class', 'item__link');
   link.textContent = 'READ MORE';
 
