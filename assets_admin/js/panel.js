@@ -185,7 +185,7 @@ if (localStorage.getItem("user")) {
 }
 // logout
 else {
-  window.location.assign("/Library/admin/index.html");
+  window.location.assign("../../admin.html");
 }
 document.querySelector("#log_out").addEventListener("click", () => {
   localStorage.removeItem("user");
