@@ -1,7 +1,7 @@
 import { db } from "./connection.js";
 import { get,set,ref,onValue,push } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
 if(localStorage.getItem('user')){
-  window.location.assign('./../../panel.html');
+  window.location.assign('./../../../admin/panel.html');
 }
 const btn = document.querySelector(".login__form button");
 const user = document.querySelector(".login__form #user");
