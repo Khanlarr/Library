@@ -109,31 +109,73 @@ var bookName=document.querySelector('.bookname')
 var date=document.querySelector('.publishdate')
 var authorName=document.querySelector('.authorname')
 var description=document.querySelector('#kiev p')
+let comment_div=document.querySelector('.comment_d');
+let comment__input=document.querySelector('.comment__form input')
+let comment__button=document.querySelector('.comment__form button')
 
+let getBook=async()=>{
+let data=await get(ref(db, '/library/book'));
+let object=await data.val()
 
-onValue(ref(db, '/library/book'), async (snap) => {
-    let object = (await snap.val()) || {};
+var link=window.location.href;
+var obj_link=link.substring(link.length-20,link.length);
+comment_div.innerHTML=``
 
-    var link=window.location.href;
-    var obj_link=link.substring(link.length-20,link.length);
+Object.entries(object).map((e)=>{
+    let img=e[1].image
+    let book_year=e[1].year
+    let book_name=e[1].name
+    let a_name=e[1].authorName
+    let desc=e[1].description
+  
+    if(e[0]==obj_link){
+    image.setAttribute('src',img);
+    year.innerHTML=book_year;
+    bookName.innerHTML=book_name;
+    authorName.innerHTML=a_name;
+    description.innerHTML=desc;   
+    console.log(e);
+  }
+})
 
+comment__button.addEventListener('click',(ek)=>{
     Object.entries(object).map((e)=>{
-        let img=e[1].image
-        let book_year=e[1].year
-        let book_name=e[1].name
-        let a_name=e[1].authorName
-        let desc=e[1].description
-      
         if(e[0]==obj_link){
-        image.setAttribute('src',img);
-        year.innerHTML=book_year;
-        bookName.innerHTML=book_name;
-        authorName.innerHTML=a_name;
-        description.innerHTML=desc;   
-
-      }
+            let all={...e[1]}
+            e[1].comment? (all.comment=[
+                ...e[1].comment,
+                {
+                 comment_name:"anonim",
+                hour:new Date().getHours(),
+                minute:new Date().getMinutes(),
+                comment:comment__input.value   
+                }
+            ] ) : all.comment=[
+                {
+                 comment_name:"anonim",
+                hour:new Date().getHours(),
+                minute:new Date().getMinutes(),
+                comment:comment__input.value   
+                }
+            ] 
+             if(localStorage.getItem('join')){  
+            all.comment_name=JSON.parse(localStorage.getItem('join'))?.name;
+        set(ref(db,`/library/book/${obj_link}`),all)
+        console.log(all);
+    }
+    else{
+        set(ref(db,`/library/book/${obj_link}`),all)
+        console.log(all);
+    }
+            comment__input.value='';
+            alert('success')
+        }
     })
-});
+ek.preventDefault();
+})
+}
+getBook();
+
 
 window.addEventListener('scroll',()=>{
     document.querySelector('.header').classList.toggle('active',window.scrollY>0);
@@ -147,48 +189,27 @@ window.addEventListener('load',function(){
     document.querySelector('body').classList.add("loaded")  
   });
   
-let comment__input=document.querySelector('.comment__form input')
-let comment__button=document.querySelector('.comment__form button')
 
-comment__button.addEventListener('click',(e)=>{
-    let comments={
-        name:"anonim",
-        hour:new Date().getHours(),
-        minute:new Date().getMinutes(),
-        comment:comment__input.value
-    }
-    if(localStorage.getItem('join')){  
-        let key_push=push(ref(db,'/library/comment')).key;
-        comments.name=JSON.parse(localStorage.getItem('join'))?.name;
-        set(ref(db,`/library/comment/${key_push}`),comments)
-    }
-    else{
-        let key_push=push(ref(db,'/library/comment')).key;
-        set(ref(db,`/library/comment/${key_push}`),comments)
-    }
-    comment__input.value='';
-    alert('success')
-e.preventDefault();
-})
-let comment_div=document.querySelector('.comment_d');
+
 const getComment=async()=>{
-    const object=await get(ref(db,`/library/comment`));
+    let id=window.location.href.substring(window.location.href.length-20,window.location.href.length);
+    const object=await get(ref(db,`/library/book/${id}`));
     const obj=await object.val()
     comment_div.innerHTML=``
-    Object.entries(obj).slice(-5).map(objj=>{
+    obj.comment.slice(-5).map(cmt=>{
         let comment__item=document.createElement('div');
         comment__item.classList.add('comment__item');
         let comment__title=document.createElement('div');
         comment__title.classList.add('comment__title');
         let h3=document.createElement('h3');
-        h3.innerHTML=objj[1]?.name;
+        h3.innerHTML=cmt.comment_name;
         let p_date=document.createElement('p');
-        p_date.innerHTML=`${objj[1]?.hour}:${objj[1]?.minute}`
+        p_date.innerHTML=`${cmt?.hour}:${cmt?.minute}`
         comment__title.append(h3,p_date);
         let comment__description=document.createElement('div');
         comment__description.classList.add('comment__description');
         let desc_p=document.createElement('p');
-        desc_p.innerHTML=objj[1]?.comment;
+        desc_p.innerHTML=cmt.comment;
         comment__description.append(desc_p);
         comment__item.append(comment__title,comment__description)
         comment_div.prepend(comment__item)
